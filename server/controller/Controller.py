@@ -1,6 +1,10 @@
+
+import psycopg2
+from .DB import *
+
 class Controller:
     def __init__(self):
-        pass
+        db = DB()
 
 if __name__ == '__main__':
     raise Exception('')
