@@ -11,16 +11,32 @@ class DB:
 
             print(self.config)
 
-        self.client = psycopg2.connect(
+        
+    @property
+    def conn(self):
+        return psycopg2.connect(
             host=self.config['database']['host'],
             database=self.config['database']['database'],
             user=self.config['database']['user'],
             password=self.config['database']['password']
         )
 
-    def query(self, sql):
-        cursor = self.client.cursor()
-        cursor.execute(sql)
-        res = cursor.fetchall()
+    def get_records(self, query, parameters=None):
+        with self.conn as conn:
+            with conn.cursor() as cur:
+                if parameters is not None:
+                    cur.execute(query,parameters)
+                else:
+                    cur.execute(query)
+                return cur.fetchall()
 
-        return res
+    def run(self, query, autocommit=False, parameters=None):
+        with self.conn as conn:
+            conn.autocommit = autocommit
+            with conn.cursor() as cur:
+                if parameters is not None:
+                    cur.execute(query,parameters)
+                else:
+                    cur.execute(query)
+            if not autocommit:
+                conn.commit()

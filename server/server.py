@@ -13,18 +13,18 @@ def homepage():
     return "This is the home page !"
 
 
-@app.route("/getong", methods=["GET"])
+@app.route("/ong", methods=["GET"])
 def get_all_ongs():
     """
     This methods returns a list of all ONGs from 
     ONGs public table.
     """
     sql = open(f"{QUERIES_PATH}/get_all_ongs.sql", "r").read()
-    res = db.query(sql)
+    res = db.get_records(sql)
     return res
 
 
-@app.route("/getong/<id>", methods=["GET"])
+@app.route("/ong/<id>", methods=["GET"])
 def get_ong(id):
     """
     This method returns the ong with ong 
@@ -34,9 +34,23 @@ def get_ong(id):
     query = open(f"{QUERIES_PATH}/get_single_ong.sql", "r").read()
     query = query.format(id=id_ong)
 
-    res = db.query(query)
+    res = db.get_records(query)
 
     return res
+
+
+@app.route("/ong/<id>", methods=["DELETE"])
+def delete_ong(id):
+
+    id_ong = id
+
+    query = open(f"{QUERIES_PATH}/delete_ong_from_id.sql", "r").read()
+    query = query.format(id=id_ong)
+
+    db.run(query)
+
+    return "User was deleted"
+
 
 
 
