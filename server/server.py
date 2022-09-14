@@ -1,44 +1,36 @@
-from flask import Flask, request
+from flask import Flask, request, make_response
 import controller
 from controller import *
 
 app = Flask(__name__)
+Controller = Controller()
 
-db = DB()
-
-QUERIES_PATH = "db/queries"
-
-@app.route("/")
-def homepage():
-    return "This is the home page !"
-
-
-@app.route("/getong", methods=["GET"])
-def get_all_ongs():
+@app.route("/ong", methods=["GET", "POST"])
+def ong():
     """
     This methods returns a list of all ONGs from 
     ONGs public table.
     """
-    sql = open(f"{QUERIES_PATH}/get_all_ongs.sql", "r").read()
-    res = db.query(sql)
-    return res
+    if request.method == "POST":
+        pass
+    elif request.method == "GET":
+        return Controller.get_all_ongs()
 
-
-@app.route("/getong/<id>", methods=["GET"])
+@app.route("/ong/<id>", methods=["GET"])
 def get_ong(id):
     """
     This method returns the ong with ong 
     """
-    id_ong = id
 
-    query = open(f"{QUERIES_PATH}/get_single_ong.sql", "r").read()
-    query = query.format(id=id_ong)
+    return Controller.get_ong(id)
 
-    res = db.query(query)
-
-    return res
-
-
+@app.route("/ong/<id>", methods=["DELETE"])
+def delete_ong(id):
+    try:
+        Controller.delete_ong(id)
+        return(make_response("User has been deleted", 200))
+    except:
+        return(make_response("Error on deleting user", 400))
 
 if __name__ == "__main__":
     app.run(debug=True)
