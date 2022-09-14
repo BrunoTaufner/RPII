@@ -3,7 +3,7 @@ import yaml
 
 class DB:
     def __init__(self):
-        with open("server/config.yaml", 'r') as config:
+        with open("config.yaml", 'r') as config:
             try:
                 self.config = yaml.safe_load(config)
             except:
@@ -21,5 +21,6 @@ class DB:
     def query(self, sql):
         cursor = self.client.cursor()
         cursor.execute(sql)
+        res = cursor.fetchall()
 
-        return cursor
+        return res
