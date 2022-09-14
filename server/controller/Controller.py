@@ -14,7 +14,7 @@ class Controller:
         query = open(f"{self.db.QUERY_PATH}/get_single_ong.sql", "r").read()
         query = query.format(id=id)
 
-        return self.db.query(query)
+        return self.db.query(query)[0]
 
 if __name__ == '__main__':
     raise Exception('')

@@ -1,4 +1,4 @@
-from flask import Flask, request
+from flask import Flask, request, jsonify
 import controller
 from controller import *
 
@@ -20,11 +20,14 @@ def get_ong(id):
     This method returns the ong with ong 
     """
 
-    return Controller.get_ong(id)
+    return jsonify(Controller.get_ong(id))
 
 @app.route("/createong", methods=["POST"])
 def create_ong():
     pass
+    """
+    This method creates the ong with ong 
+    """
 
 if __name__ == "__main__":
     app.run(debug=True)

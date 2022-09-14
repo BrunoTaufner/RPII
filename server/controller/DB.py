@@ -1,4 +1,5 @@
 import psycopg2
+import psycopg2.extras
 import yaml
 
 class DB:
@@ -15,12 +16,21 @@ class DB:
             user=self.config['database']['user'],
             password=self.config['database']['password']
         )
+        self.cursor = self.client.cursor(cursor_factory=psycopg2.extras.DictCursor)
+
 
         self.QUERY_PATH = "db/queries"
 
     def query(self, sql):
-        cursor = self.client.cursor()
-        cursor.execute(sql)
-        res = cursor.fetchall()
+        self.cursor.execute(sql)
+        data = self.cursor.fetchall()
+        result = []
 
-        return res
+        for line in data:
+            response = {}
+            for key, value in line.items():
+                response[key] = value
+
+            result.append(response)
+
+        return result
