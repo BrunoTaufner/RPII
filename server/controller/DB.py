@@ -9,14 +9,14 @@ class DB:
             except:
                 pass
 
-            print(self.config)
-
         self.client = psycopg2.connect(
             host=self.config['database']['host'],
             database=self.config['database']['database'],
             user=self.config['database']['user'],
             password=self.config['database']['password']
         )
+
+        self.QUERY_PATH = "db/queries"
 
     def query(self, sql):
         cursor = self.client.cursor()
