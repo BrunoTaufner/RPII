@@ -47,5 +47,22 @@ def delete_ong(id):
     except:
         return(make_response("Error on deleting ONG", 400))
 
+
+@app.route("/login", methods=["POST"])
+def login():
+    payload = request.get_json()
+    email = payload["email"]
+    senha = payload["senha"]
+    tipo = payload["tipo"]
+
+    try:
+        response = Controller.login(email, senha, tipo, bcrypt)
+        return response
+    except Exception as e:
+        print(e)
+        return make_response("Error while logging in.", 400)
+    
+
+
 if __name__ == "__main__":
     app.run(debug=True)
