@@ -1,7 +1,10 @@
 from flask import Flask, request, make_response
+from flask_bcrypt import Bcrypt
 from controller import *
 
 app = Flask(__name__)
+
+bcrypt = Bcrypt(app)
 Controller = Controller()
 
 @app.route("/ong", methods=["GET", "POST"])
@@ -13,9 +16,10 @@ def ong():
     if request.method == "POST":
         try:
             payload = request.get_json()
-            response = Controller.create_ong(cnpj=payload['cnpj'], nome=payload['nome'], descricao=payload['descricao'], tipo=payload['tipo'], telefone=payload['telefone'], email=payload['email'], endereco_cep=payload['endereco_cep'], endereco_num=payload['endereco_num'], endereco_complemento=payload['endereco_complemento'], senha=payload['senha'])
-            return(make_response(payload, 200))
-        except:
+            hashed_senha = bcrypt.generate_password_hash(payload['senha'])
+            response = Controller.create_ong(cnpj=payload['cnpj'], nome=payload['nome'], descricao=payload['descricao'], tipo=payload['tipo'], telefone=payload['telefone'], email=payload['email'], endereco_cep=payload['endereco_cep'], endereco_num=payload['endereco_num'], endereco_complemento=payload['endereco_complemento'], senha=hashed_senha)
+            return response
+        except Exception as e:
             return(make_response("Error on creating an ONG", 400))
     elif request.method == "GET":
         try:
