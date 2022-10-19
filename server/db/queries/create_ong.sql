@@ -25,6 +25,6 @@ VALUES
                cnpj='{cnpj}' AND nome='{nome}' AND descricao='{descricao}' AND tipo='{tipo}' AND telefone='{telefone}' AND email='{email}'
         ),
         '{endereco_cep}',
-        '{endereco_num}',
+        {endereco_num},
         '{endereco_complemento}'
     )
