@@ -1,5 +1,6 @@
 from flask import Flask, request, make_response
 from flask_bcrypt import Bcrypt
+import hashlib
 from controller import *
 
 app = Flask(__name__)
@@ -16,10 +17,23 @@ def ong():
     if request.method == "POST":
         try:
             payload = request.get_json()
-            hashed_senha = bcrypt.generate_password_hash(payload['senha'])
-            response = Controller.create_ong(cnpj=payload['cnpj'], nome=payload['nome'], descricao=payload['descricao'], tipo=payload['tipo'], telefone=payload['telefone'], email=payload['email'], endereco_cep=payload['endereco_cep'], endereco_num=payload['endereco_num'], endereco_complemento=payload['endereco_complemento'], senha=hashed_senha)
+            print(payload)
+            hashed_senha = hashlib.md5(payload['senha'].encode('utf-8')).hexdigest()
+            response = Controller.create_ong(
+                cnpj=payload['cnpj'] if 'cnpj' in payload else '',
+                nome=payload['nome'], 
+                descricao=payload['descricao'] , 
+                tipo=payload['tipo'] if 'tipo' in payload else '', 
+                telefone=payload['telefone'] if 'telefone' in payload else '', 
+                email=payload['email'], 
+                endereco_cep=payload['endereco_cep'] if 'endereco_cep' in payload else '', 
+                endereco_num=payload['endereco_num'] if 'endereco_num' in payload else -1, 
+                endereco_complemento=payload['endereco_complemento'] if 'endereco_completo' in payload else '', 
+                senha=hashed_senha
+            )
             return response
         except Exception as e:
+            print(e)
             return(make_response("Error on creating an ONG", 400))
     elif request.method == "GET":
         try:
@@ -56,7 +70,7 @@ def login():
     tipo = payload["tipo"]
 
     try:
-        response = Controller.login(email, senha, tipo, bcrypt)
+        response = Controller.login(email, senha, tipo)
         return response
     except Exception as e:
         print(e)
