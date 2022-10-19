@@ -1,6 +1,7 @@
 
 from flask import make_response, jsonify
 from uuid import uuid4
+import hashlib
 import psycopg2
 from .DB import *
 
@@ -39,9 +40,7 @@ class Controller:
             return make_response("Email already exists.", 409)
 
         query = self._read_sql_file(file_name="create_ong")
-        senha = str(senha).replace("'", "''")
         query = query.format(cnpj=cnpj, nome=nome, descricao=descricao, tipo=tipo, telefone=telefone, email=email, endereco_cep=endereco_cep, endereco_num=endereco_num, endereco_complemento=endereco_complemento, senha=str(senha))
-        
         try:
             self.db.run(query)
             return make_response(jsonify({
@@ -50,6 +49,29 @@ class Controller:
             }), 200)
         except Exception as e:
             return make_response(f"Something went wrong, error={e}", 400)
+
+    def login(self, email, senha, tipo):
+        if tipo == "ONG":
+            validation_query = self._read_sql_file(file_name="get_ongs_by_parameter")
+            validation_query = validation_query.format(parameter="email", value=f"'{email}'")
+            results = self.db.get_records(validation_query)
+
+            if not results:
+                return make_response("Email doesn't exists.", 404)
+
+            ong_informations = results[0]
+            hashed_password = hashlib.md5(senha.encode('utf-8')).hexdigest()
+            if not ong_informations['senha'] == hashed_password:
+                return make_response("Password is incorrect.", 401)
+
+            return make_response(jsonify({
+                "id": ong_informations["id_ong"],
+                "email": ong_informations["email"]
+            }), 200)
+        elif tipo == "Pessoa juridica":
+            return make_response("Nao implementado", 400)
+        elif tipo == "Pessoa fisica":
+            return make_response("Nao implementado", 400)
 
 if __name__ == '__main__':
     raise Exception('')
