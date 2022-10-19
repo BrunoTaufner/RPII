@@ -1,14 +1,13 @@
+from logging import raiseExceptions
 from flask import Flask, request, make_response
-from flask_bcrypt import Bcrypt
 import hashlib
 from controller import *
 
 app = Flask(__name__)
 
-bcrypt = Bcrypt(app)
 Controller = Controller()
 
-@app.route("/ong", methods=["GET", "POST"])
+@app.route("/ong", methods=["GET", "POST", "PUT"])
 def ong():
     """
     This methods returns a list of all ONGs from 
@@ -33,6 +32,22 @@ def ong():
             return response
         except Exception as e:
             return(make_response("Error on creating an ONG", 400))
+    elif request.method == "PUT":
+        try:
+            payload = request.get_json()
+
+            if not set(['id_ong']).issubset(payload):
+                raise Exception('Id obrigatórios')
+
+            if 'senha' in payload:
+                payload['senha'] = hashlib.md5(payload['senha'].encode('utf-8')).hexdigest()
+            
+            response = Controller.update_ong(
+                payload=payload
+            )
+            return response
+        except Exception as e:
+            return(make_response("Error on updating an ONG", 400))
     elif request.method == "GET":
         try:
             response = Controller.get_all_ongs()
