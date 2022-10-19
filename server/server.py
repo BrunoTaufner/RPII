@@ -17,7 +17,6 @@ def ong():
     if request.method == "POST":
         try:
             payload = request.get_json()
-            print(payload)
             hashed_senha = hashlib.md5(payload['senha'].encode('utf-8')).hexdigest()
             response = Controller.create_ong(
                 cnpj=payload['cnpj'] if 'cnpj' in payload else '',
@@ -33,7 +32,6 @@ def ong():
             )
             return response
         except Exception as e:
-            print(e)
             return(make_response("Error on creating an ONG", 400))
     elif request.method == "GET":
         try:
@@ -73,7 +71,6 @@ def login():
         response = Controller.login(email, senha, tipo)
         return response
     except Exception as e:
-        print(e)
         return make_response("Error while logging in.", 400)
     
 

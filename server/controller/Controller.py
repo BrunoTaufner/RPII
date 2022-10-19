@@ -40,7 +40,6 @@ class Controller:
             return make_response("Email already exists.", 409)
 
         query = self._read_sql_file(file_name="create_ong")
-        senha = str(senha)
         query = query.format(cnpj=cnpj, nome=nome, descricao=descricao, tipo=tipo, telefone=telefone, email=email, endereco_cep=endereco_cep, endereco_num=endereco_num, endereco_complemento=endereco_complemento, senha=str(senha))
         try:
             self.db.run(query)
@@ -62,7 +61,6 @@ class Controller:
 
             ong_informations = results[0]
             hashed_password = hashlib.md5(senha.encode('utf-8')).hexdigest()
-            print(ong_informations['senha'])
             if not ong_informations['senha'] == hashed_password:
                 return make_response("Password is incorrect.", 401)
 
