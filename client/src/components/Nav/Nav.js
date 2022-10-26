@@ -4,9 +4,24 @@ import styles from './Nav.module.css';
 
 const Nav = () => (
   <div className={styles.Nav} data-testid="Nav">
-    Nav Component
-  </div>
+    <div class={styles.barra}>
+      <div class={styles.innerheader}>
+          <ul>
+            <li>Home</li>
+            <li>Doações</li>
+            <li>Buscar</li>
+            <li>Quem Somos</li>
+            <li>Causas</li>
+            <li>ONGs</li>
+            <li>Perfil</li>
+          </ul>
+        </div>
+      </div>  
+    </div>
+
+  
 );
+
 
 Nav.propTypes = {};
 
