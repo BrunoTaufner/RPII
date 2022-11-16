@@ -1,0 +1,9 @@
+.labelTexto {
+    flex-wrap: wrap;
+    font-family: 'Mandali';
+    font-weight: 400;
+    font-size: 36px;
+    text-align: center;
+    color: #057097;
+
+}
