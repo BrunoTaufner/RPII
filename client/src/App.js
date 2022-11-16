@@ -5,6 +5,7 @@ import Doacao from './pages/doacao'
 import ListaEventos from './pages/listaEventos'
 import BuscarOng from './pages/buscarOngs'
 import Sobre from './pages/sobre'
+import Login from './pages/login'
 import Footer from './components/Footer/Footer';
 import Navbar from './components/Navbar/index'
 import { BrowserRouter as Router, Routes, Route}
@@ -20,6 +21,7 @@ function App() {
       <Route path = '/eventos' element = {<ListaEventos/>} />
       <Route path = '/buscarong' element = {<BuscarOng/>} />
       <Route path = '/doacao' element = {<Doacao/>} />
+      <Route path = '/login' element = {<Login/>} />
     </Routes>
     <Footer/>
     </Router>

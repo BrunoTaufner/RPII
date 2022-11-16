@@ -1,9 +1,14 @@
 import React from 'react';
-
+import { FaBars } from 'react-icons/fa';
+import {
+	Title,
+	Input
+	} from '../styles/Styles';
 const Doacao = () => {
 return (
 	<div>
-	<h1>Página de doação</h1>
+	<Title>Faça uma doação</Title>
+	<Input></Input>
 	</div>
 );
 };

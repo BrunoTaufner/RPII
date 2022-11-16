@@ -4,14 +4,28 @@ import styled from 'styled-components';
 
 export const Nav = styled.nav`
 background: #FF;
+border-radius: 10px;
 height: 60px;
 box-shadow: 2px 2px 20px lightblue;
 display: flex;
+
 justify-content: space-between;
 padding: 0.2rem calc((100vw - 1000px) / 2);
 z-index: 12;
 /* Third Nav */
 /* justify-content: flex-start; */
+`;
+
+export const Button = styled.button`
+  /* Adapt the colors based on primary prop */
+  background: #538EF5;
+  color: white;
+
+  font-size: 1em;
+  margin: 1em;
+  padding: 0.25em 1em;
+  border: 2px solid #538EF5;
+  border-radius: 3px;
 `;
 
 export const NavLink = styled(Link)`
@@ -26,6 +40,17 @@ cursor: pointer;
 	color: #000000;
 }
 `;
+
+export const Center = styled.nav`
+	display: flex;
+    position: relative;
+	margin: 0;
+    position: absolute;
+    top: 5%;
+    left: 50%;
+    transform: translate(-50%, -50%);	
+`;
+
 
 export const Bars = styled(FaBars)`
 display: none;

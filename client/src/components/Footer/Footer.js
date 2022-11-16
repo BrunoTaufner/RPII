@@ -17,11 +17,11 @@ return (
 		</Column>
 		<Column>
 			
-			<FooterLink href="#">Writing</FooterLink>
+			<FooterLink href="/doacao">Doar</FooterLink>
 		</Column>
 		<Column>
 			
-			<FooterLink href="#">Uttar Pradesh</FooterLink>
+			<FooterLink href="#">Contato</FooterLink>
 		</Column>
 		<Column>
 		
