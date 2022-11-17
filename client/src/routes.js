@@ -7,7 +7,7 @@ const routes = () => {
         <>
             <BrowserRouter>
                 <Routes>
-                    <Route path='/catalog' element={<Catalog />} exact />
+                    <Route path='/catalog' element={<Catalog/>} exact />
                 </Routes>
             </BrowserRouter>
         </>
