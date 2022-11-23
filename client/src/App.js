@@ -1,5 +1,5 @@
-
 import React from 'react';
+import GlobalStyle from './globalStyles';
 import Home from './pages/index'
 import Doacao from './pages/doacao'
 import ListaEventos from './pages/listaEventos'
@@ -8,7 +8,8 @@ import Sobre from './pages/sobre'
 import Contato from './pages/contato'
 import Login from './pages/login'
 import Footer from './components/Footer/Footer';
-import Navbar from './components/Navbar/index'
+import Navbar from './components/Navbar/index';
+
 import { BrowserRouter as Router, Routes, Route}
     from 'react-router-dom';
 
@@ -32,4 +33,5 @@ function App() {
  
   );
 }
+
 export default App;
