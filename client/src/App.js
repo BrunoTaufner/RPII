@@ -5,6 +5,7 @@ import Doacao from './pages/doacao'
 import ListaEventos from './pages/listaEventos'
 import BuscarOng from './pages/buscarOngs'
 import Sobre from './pages/sobre'
+import Contato from './pages/contato'
 import Login from './pages/login'
 import Footer from './components/Footer/Footer';
 import Navbar from './components/Navbar/index'
@@ -22,6 +23,9 @@ function App() {
       <Route path = '/buscarong' element = {<BuscarOng/>} />
       <Route path = '/doacao' element = {<Doacao/>} />
       <Route path = '/login' element = {<Login/>} />
+      <Route path = '/contato' element = {<Contato/>} />
+      
+      
     </Routes>
     <Footer/>
     </Router>
