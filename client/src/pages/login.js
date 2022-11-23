@@ -136,6 +136,7 @@ const Login = () => {
 	}
 return (
 	<div>
+		<Navbar />
 		<div id="div-login">
 			<LabelTitulo texto={"Login"} />
 			<div id="input-email" style={{display: "flex", justifyContent: "space-evenly"}}>
@@ -331,6 +332,7 @@ return (
 				<Button textoBotao={"Enviar"} handleClick={submitCadastroPj} />
 			</div>
 		</div>	
+		<Footer />
 	</div>
 );
 };
