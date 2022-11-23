@@ -1,12 +1,16 @@
 import React from "react";
+import Footer from "../components/Footer/Footer";
+import Navbar from "../components/Navbar";
 
 const BuscarOng = () => {
 return (
-	<div>
+	<>
+	<Navbar />
 	<h1>
 		Buscar ONG
 	</h1>
-	</div>
+	<Footer />
+	</>
 );
 };
 
