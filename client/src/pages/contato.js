@@ -1,6 +1,6 @@
 import React from 'react';
 import { FaBars } from 'react-icons/fa';
-import insta from './instagram.jpg'
+import insta from './instagram2.jpg'
 import face from './facebook.png'
 import linkedin from './linkedin.png'
 import twitter from './twitter.jpg'
