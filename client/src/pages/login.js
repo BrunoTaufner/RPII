@@ -1,4 +1,6 @@
 import React from "react";
+import Footer from "../components/Footer/Footer";
+import Navbar from "../components/Navbar";
 import Input from '../components/Input/Input';
 import Button from '../components/Button/Button';
 import TopFormulario from '../components/TopFormulario/TopFormulario';
@@ -12,6 +14,7 @@ const Login = () => {
 	}
 return (
 	<div>
+    <Navbar />
 		<div id="div-login">
 			<LabelTitulo texto={"Login"} />
 			<div id="input-email" style={{display: "flex", justifyContent: "space-evenly"}}>
@@ -34,6 +37,7 @@ return (
 			<Input />
 			<Button textoBotao={"Texto"} />
 		</div>
+    <Footer />
 	</div>
 );
 };
