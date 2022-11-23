@@ -3,7 +3,7 @@ import styles from './Input.module.css';
 
 const Input = () => (
   <div className={styles.divInput}>
-    <div className={styles.input} data-testid="Input" />
+    <input className={styles.input} data-testid="Input" />
   </div>
 );
 
