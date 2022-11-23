@@ -15,9 +15,9 @@ const Home = () => {
 
 			<ColunaDir>
 				<TituloPost>Adoção de animais</TituloPost>
-				<br></br>
 				<TextoPost>
-					Lorem ipsum dolor sit amet, consectetur adipisci elit,
+				Texto
+				Lorem ipsum dolor sit amet, consectetur adipisci elit,
 					sed eiusmod tempor incidunt ut labore et dolore magna aliqua.
 					Ut enim ad minim veniam, quis nostrum exercitationem ullam
 					corporis suscipit laboriosam, nisi ut aliquid ex ea commodi
@@ -32,7 +32,6 @@ const Home = () => {
 
 			<ColunaDir>
 				<TituloPost>Doação de sangue</TituloPost>
-				<br></br>
 				<TextoPost>
 					Lorem ipsum dolor sit amet, consectetur adipisci elit,
 					sed eiusmod tempor incidunt ut labore et dolore magna aliqua.
@@ -49,7 +48,6 @@ const Home = () => {
 
 			<ColunaDir>
 				<TituloPost>Educação</TituloPost>
-				<br></br>
 				<TextoPost>
 					Lorem ipsum dolor sit amet, consectetur adipisci elit,
 					sed eiusmod tempor incidunt ut labore et dolore magna aliqua.
