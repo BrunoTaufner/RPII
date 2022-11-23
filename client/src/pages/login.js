@@ -1,4 +1,6 @@
 import React from "react";
+import Footer from "../components/Footer/Footer";
+import Navbar from "../components/Navbar";
 import Input from '../components/Input/Input';
 import TextArea from '../components/TextArea/TextArea';
 import Button from '../components/Button/Button';
