@@ -1,5 +1,4 @@
 import React from 'react';
-import styles from './TopFormulario.module.css';
 import LabelTitulo from '../labels/LabelTitulo/LabelTitulo';
 import Label_Tipo_Cadastro from '../labels/Label_Tipo_Cadastro/Label_Tipo_Cadastro';
 import Label_Numero_Pergunta from '../labels/Label_Numero_Pergunta/Label_Numero_Pergunta';

@@ -1,3 +1,4 @@
+import { FaBars } from 'react-icons/fa';
 import styled from 'styled-components';
 export const Title = styled.h1`
 font-size: 70px;
