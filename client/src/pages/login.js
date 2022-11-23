@@ -67,6 +67,8 @@ const Login = () => {
 	}
 	const submitCadastroOng = () => {
 		console.log("submit cadastro ong");
+		document.getElementById("div-cadastro-ong-7").style.display = "none";
+		document.getElementById("div-login").style.display = "block";	
 	}
 	const mostrarCadastroNaoOng = () => {
 		document.getElementById("div-tipo-usuario").style.display = "none";
@@ -94,6 +96,8 @@ const Login = () => {
 	}
 	const submitCadastroPj = () => {
 		console.log("Submit Cadastro Pj");
+		document.getElementById("div-cadastro-pf-4").style.display = "none";
+		document.getElementById("div-login").style.display = "block";	
 	}
 	const mostrarCadastroPf1 = () => {
 		document.getElementById("div-cadastro-nao-ong").style.display = "none";
@@ -125,6 +129,8 @@ const Login = () => {
 	}
 	const submitCadastroPf = () => {
 		console.log("Submit Cadastro Pf");
+		document.getElementById("div-cadastro-pj-3").style.display = "none";
+		document.getElementById("div-login").style.display = "block";	
 	}
 return (
 	<div>
