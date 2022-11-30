@@ -1,56 +1,28 @@
+import axios from "axios";
 import React from 'react'
 import styled from 'styled-components'
 import Footer from '../components/Footer/Footer'
 import Navbar from '../components/Navbar'
 import ONGCard from '../components/ONGCard/ongcard'
-import {GrAccessibility} from "react-icons/gr"
+
+const baseURL = 'http://127.0.0.1:5000';
 
 const Catalog = () => {
-  return (
+    const data = async () => {
+        const response = await axios.get(`${baseURL}/ong`)
+        console.log(response)
+    }
+    data();
+
+    return (
     <>
         <Navbar />
         <PageWrapper>
-            <FilterWrapper>
-                <FilterBox>
-                    <GrAccessibility size="50px" />
-                    <FilterName>FilterName</FilterName>
-                </FilterBox >
-                <FilterBox>
-                    <GrAccessibility size="50px" />
-                    <FilterName>FilterName</FilterName>
-                </FilterBox >
-                <FilterBox>
-                    <GrAccessibility size="50px" />
-                    <FilterName>FilterName</FilterName>
-                </FilterBox >
-                <FilterBox>
-                    <GrAccessibility size="50px" />
-                    <FilterName>FilterName</FilterName>
-                </FilterBox >
-            </FilterWrapper>
             <ContentWrapper>
-                <ONGCard />
-                <ONGCard />
-                <ONGCard />
-                <ONGCard />
-                <ONGCard />
-                <ONGCard />
-                <ONGCard />
-                <ONGCard />
-                <ONGCard />
-                <ONGCard />
-                <ONGCard />
-                <ONGCard />
-                <ONGCard />
-                <ONGCard />
-                <ONGCard />
-                <ONGCard />
-                <ONGCard />
-                <ONGCard />
-                <ONGCard />
-                <ONGCard />
-                <ONGCard />
-                <ONGCard />
+                <ONGCard 
+                    name="ONG Name"
+                    description="Descrição legal"
+                />
             </ContentWrapper>
         </PageWrapper>
         <Footer />

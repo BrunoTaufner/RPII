@@ -1,20 +1,20 @@
 import React from 'react'
 import styled from 'styled-components'
 
-const ONGCard = () => {
-  return (
+const ONGCard = (props) => {
+    return (
     <>
         <ONGWrapper>
             <ONGImgWrapper>
                 <OngImg src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTeFt9XvVJ3HAMnMkBelXmzPA_D0jTPKEDphw&usqp=CAU"></OngImg>
             </ONGImgWrapper>
-            <ONGTitle>ONG Name</ONGTitle> 
+            <ONGTitle>{props.name}</ONGTitle> 
             <ONGInformationsWrapper>
-                Insert ONG short description and informations
+                {props.description}
             </ONGInformationsWrapper>
         </ONGWrapper>
     </>
-  )
+    )
 }
 
 const ONGWrapper = styled.div`
