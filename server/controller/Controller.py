@@ -115,7 +115,7 @@ class Controller:
 
     def search_ong(self, causa, nome):
         results = []
-
+        causa = False
         if causa and nome:
             validation_query = self._read_sql_file(file_name="search_ong")
             validation_query = validation_query.format(nome=f"'%{nome}%'", causa=f"'%{causa}%'")
