@@ -1,15 +1,15 @@
-import Footer from "components/Footer/Footer";
-import Navbar from "components/Navbar";
 import React from "react";
+import Footer from "../components/Footer/Footer";
+import Navbar from "../components/Navbar";
 
 const ListaEventos = () => {
 return (
 	<>
-		<Navbar />
+		<Navbar/>
 		<h1>
 			Lista de Eventos
 		</h1>
-		<Footer />
+		<Footer/>
 	</>
 );
 };

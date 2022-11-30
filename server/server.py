@@ -1,11 +1,10 @@
 from logging import raiseExceptions
 from flask import Flask, request, make_response
-from flask_cors import CORS, cross_origin
 import hashlib
 from controller import *
 
 app = Flask(__name__)
-CORS(app)
+
 Controller = Controller()
 
 @app.route("/ong", methods=["GET", "POST", "PUT"])
@@ -88,16 +87,8 @@ def login():
         return response
     except Exception as e:
         return make_response("Error while logging in.", 400)
-
-@app.route("/searchong", methods=["POST"])
-def search_ong():
-    payload = request.get_json()
     
-    causa = payload["causa"] if "causa" in payload else None
-    nome = payload["nome"] if "nome" in payload else None
 
-        
-    return Controller.search_ong(causa, nome)
 
 if __name__ == "__main__":
     app.run(debug=True)
