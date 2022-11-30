@@ -84,3 +84,86 @@ export const IconeLupa = styled.div`
   right: 0.5%;
   align: right;
 `
+export const CaixaResultados = styled.div`
+  color: black;
+  background: transparent;
+  border: 2px solid black;
+  border-radius: 10px;
+  padding: 5px;
+  display: flex;
+  margin: 1rem;
+  position: absolute;
+  top: 25%;
+  height: 100%;
+  width: 96%;
+`
+export const Resultado = styled.div`
+  color: black;
+  background: transparent;
+  border: 2px solid black;
+  border-radius: 10px;
+  padding: 5px;
+  display: flex;
+  margin: 1rem;
+  position: absolute;
+  top: 0%;
+  height: 20%;
+  width: 30%;
+`
+export const ColunaEsq = styled.div `
+  // border: 3px solid red;
+  float: left;
+  width: 30%;
+  height:400px;
+  margin-left: 20%;
+  display: flex;
+  align-items: center;
+// background-color:#aaa;border: 2px solid red;
+  `;
+export const ColunaDir = styled.div `
+  float: left;
+  width: 30%;
+  height:400px;
+  margin-bottom:2em;
+  // align-items: center;
+// background-color:#aaa;
+// border: 2px solid red;
+`;
+
+export const TituloPost = styled.p `
+  font-size:32px;
+  font-weight: 600;
+  color: #538EF5;
+  overflow-wrap: break-word;
+  overflow:hidden;
+  text-align: center;
+  margin-bottom:0px;
+  // border: 2px solid blue;
+`;
+
+export const TextoPost = styled.p `
+  font-size:22px;
+  color: #3e3e3e;
+  padding-left:1em;
+  margin-bottom:0px;
+  overflow-wrap: break-word;
+  text-align: justify;
+  overflow:hidden;
+  height:55%;
+  border: 2px solid blue;
+`;
+
+export const LinkPost = styled.p `
+  font-size:24px;
+  font-weight: 600;
+  color: #538EF5;
+  overflow-wrap: break-word;
+  overflow:hidden;
+  text-align: center;
+  margin-top:0px;
+  // border: 2px solid blue;
+`;
+
+export const A = styled.a`
+  text-decoration:none;
+`;
