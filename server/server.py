@@ -87,16 +87,8 @@ def login():
         return response
     except Exception as e:
         return make_response("Error while logging in.", 400)
-
-@app.route("/searchong", methods=["POST"])
-def search_ong():
-    payload = request.get_json()
     
-    causa = payload["causa"] if "causa" in payload else None
-    nome = payload["nome"] if "nome" in payload else None
 
-        
-    return Controller.search_ong(causa, nome)
 
 if __name__ == "__main__":
     app.run(debug=True)

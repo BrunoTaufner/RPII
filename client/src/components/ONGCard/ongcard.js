@@ -5,13 +5,15 @@ const ONGCard = () => {
   return (
     <>
         <ONGWrapper>
-            <ONGImgWrapper>
-                <OngImg src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTeFt9XvVJ3HAMnMkBelXmzPA_D0jTPKEDphw&usqp=CAU"></OngImg>
-            </ONGImgWrapper>
             <ONGTitle>ONG Name</ONGTitle> 
-            <ONGInformationsWrapper>
-                Insert ONG short description and informations
-            </ONGInformationsWrapper>
+            <ONGDescriptionWrapper>
+                <ONGInformationsWrapper>
+                    Insert ONG description and informations
+                </ONGInformationsWrapper>
+                <ONGImg>
+                    Insert ONG image here
+                </ONGImg>
+            </ONGDescriptionWrapper>
         </ONGWrapper>
     </>
   )
@@ -20,44 +22,41 @@ const ONGCard = () => {
 const ONGWrapper = styled.div`
     display:flex;
     flex-direction:column;
-    width: 250px;
+    border: 1px solid black;
+    border-radius: 16px;
+    box-shadow: 1em 1em 1em #1111112b;
+    width: 100%;
     height: 300px;
     min-height: 300px;
-    padding: 0.5rem;
-    background: transparent;
+    background: #fff;
+    padding: 1rem;
 `
 const ONGTitle = styled.h1`
     color: black;
-    font-size: 24px;
-    margin-top: 0.5rem;
+`
+
+const ONGDescriptionWrapper = styled.div`
+    display:flex;
+    flex-direction:row;
+    height: 100%;
 `
 
 const ONGInformationsWrapper = styled.div`
     display:flex;
     flex-direction:row;
-    width: 100%;
-    height: 90px;
+    width: 70%;
+    border: 1px solid black;
     display:flex;
-    color: grey;
-    padding: 0.3rem;
-    overflow:hidden;
-    display: -webkit-box;
-    -webkit-line-clamp: 3;
-    -webkit-box-orient: vertical;
+    justify-content:center;
+    align-items:center;
 `
 
-const ONGImgWrapper = styled.div`
-    width: 100%;
-    height: 100%;
+const ONGImg = styled.div`
+    width: 30%;
     display:flex;
     align-items:center;
     justify-content:center;
     border: 1px solid black;
-    border-radius: 16px;
-    overflow:hidden;
-`
-
-const OngImg = styled.img`
 `
 
 export default ONGCard;
