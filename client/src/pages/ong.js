@@ -1,24 +1,22 @@
 import React from 'react'
+import { useLocation } from 'react-router-dom'
 import styled from 'styled-components'
 import Footer from '../components/Footer/Footer'
 import Navbar from '../components/Navbar'
 
-const ONG = () => {
+const ONG = (props) => {
+    const { state } = useLocation();
+    console.log(state);
   return (
     <>
         <Navbar />
         <PageWrapper>
             <OngWrapper>
-                <OngName>ONG Name</OngName>
-                <OngImage> ONG IMAGE </OngImage>
+                <OngName>{state.name}</OngName>
+                <OngImage background={state.image}/>
                 <OngDescriptionWrapper>
                     Description <br/>
-                    Lorem ipsum dolor sit amet, consectetur adipisci elit,
-					sed eiusmod tempor incidunt ut labore et dolore magna aliqua.
-					Ut enim ad minim veniam, quis nostrum exercitationem ullam
-					corporis suscipit laboriosam, nisi ut aliquid ex ea commodi
-					consequatur. Quis aute iure reprehenderit in voluptate velit
-					esse cillum dolore eu fugiat nulla pariatur.
+                    {state.description}
                 </OngDescriptionWrapper>
                 <OngDonationWrapper>
                     <a>Gostou da ONG e deseja ajudar ?</a>
@@ -62,6 +60,9 @@ const OngImage = styled.div`
     width: 100%;
     border: 1px solid black;
     font-size: 50px;
+    background-image: ${props => `url(${props.background})`};
+    background-repeat: no-repeat;
+    background-size: contain;
 `
 
 const OngDescriptionWrapper = styled.div`
