@@ -1,14 +1,6 @@
+import Footer from "components/Footer/Footer";
+import Navbar from "components/Navbar";
 import React from "react";
-import Footer from "../components/Footer/Footer";
-import Navbar from "../components/Navbar";
-import Input from '../components/Input/Input';
-import TextArea from '../components/TextArea/TextArea';
-import Button from '../components/Button/Button';
-import TopFormulario from '../components/TopFormulario/TopFormulario';
-import LabelTitulo from '../components/labels/LabelTitulo/LabelTitulo';
-import LabelTexto from '../components/labels/LabelTexto/LabelTexto';
-import LabelPergunta from '../components/labels/Label_Pergunta/Label_Pergunta';
-import SelectTipoOng from '../components/SelectTipoOng/SelectTipoOng';
 
 const Login = () => {
 
@@ -157,7 +149,7 @@ const Login = () => {
 		document.getElementById("div-login").style.display = "block";	
 	}
 return (
-	<div>
+	<>
 		<Navbar />
 		<div id="div-login">
 			<LabelTitulo texto={"Login"} />
@@ -355,7 +347,7 @@ return (
 			</div>
 		</div>	
 		<Footer />
-	</div>
+	</>
 );
 };
 
