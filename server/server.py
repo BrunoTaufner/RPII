@@ -1,10 +1,11 @@
 from logging import raiseExceptions
 from flask import Flask, request, make_response
+from flask_cors import CORS, cross_origin
 import hashlib
 from controller import *
 
 app = Flask(__name__)
-
+CORS(app)
 Controller = Controller()
 
 @app.route("/ong", methods=["GET", "POST", "PUT"])
