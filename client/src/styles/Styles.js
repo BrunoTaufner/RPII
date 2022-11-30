@@ -74,7 +74,7 @@ export const TextoPost = styled.p `
   text-align: justify;
   overflow:hidden;
   height:55%;
-  border: 2px solid blue;
+  // border: 2px solid blue;
 `;
 
 export const LinkPost = styled.p `
