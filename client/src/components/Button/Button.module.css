@@ -1,0 +1,19 @@
+.divButton{
+    display: flex;
+    justify-content: center;
+    align-items: center;  
+}
+.button {
+    background: #057097;
+    width: fit-content;
+    border-radius: 10px;
+    font-size: 27px;
+    font-family: 'Roboto';
+    font-style: normal;
+    font-weight: 400;
+    text-align: center;
+    color: #FFFFFF;
+    margin: 20px 0;
+    padding: 5px 30px;
+    height: 45px;
+}
