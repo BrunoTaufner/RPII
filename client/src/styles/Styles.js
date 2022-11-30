@@ -9,7 +9,6 @@ export const Title = styled.h1`
   background-clip: text;
   -webkit-background-clip: text;
   text-align: center;
-  padding-bottom:0.5em;
   @font-face {
     font-family: 'Helvetica';
     src: local(''), url(fonts/helvetica-rounded-bold.otf) format('otf');
@@ -40,17 +39,17 @@ export const ColunaEsq = styled.div `
   float: left;
   width: 30%;
   height:400px;
-  margin-left: 18%;
+  margin-left: 20%;
   display: flex;
   align-items: center;
-// background-color:#aaa;
-`;
+// background-color:#aaa;border: 2px solid red;
+  `;
 export const ColunaDir = styled.div `
   float: left;
   width: 30%;
   height:400px;
-  // display:flex;
   margin-bottom:2em;
+  // align-items: center;
 
 // background-color:#aaa;border: 2px solid red;
 `;
@@ -59,23 +58,20 @@ export const TituloPost = styled.p `
   font-size:32px;
   font-weight: 600;
   color: #538EF5;
-  // margin-top:0px;
-  // margin-bottom:0px;
   overflow-wrap: break-word;
   overflow:hidden;
   text-align: center;
+  // margin-top:0px;
 // border: 2px solid blue;
 `;
 
 export const TextoPost = styled.p `
   font-size:22px;
-  // color: #;
+  color: #3e3e3e;
   padding-left:1em;
   overflow-wrap: break-word;
   text-align: justify;
   overflow:hidden;
   height:60%;
-  // height: 12em;
 // border: 2px solid blue;
-
 `;

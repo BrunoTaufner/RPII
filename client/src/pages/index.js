@@ -10,42 +10,8 @@ const Home = () => {
 			<Title>Principais causas da semana</Title>
 
 			<ColunaEsq>
-				<img src={img_animais} width="100%"></img>
-			</ColunaEsq>
-
-			<ColunaDir>
-				<TituloPost>Adoção de animais</TituloPost>
-				<TextoPost>
-				Texto
-				Lorem ipsum dolor sit amet, consectetur adipisci elit,
-					sed eiusmod tempor incidunt ut labore et dolore magna aliqua.
-					Ut enim ad minim veniam, quis nostrum exercitationem ullam
-					corporis suscipit laboriosam, nisi ut aliquid ex ea commodi
-					consequatur. Quis aute iure reprehenderit in voluptate velit
-					esse cillum dolore eu fugiat nulla pariatur.
-				</TextoPost>
-			</ColunaDir>
-			
-			<ColunaEsq>
-				<img src={img_doe_sangue} width="100%"></img>
-			</ColunaEsq>
-
-			<ColunaDir>
-				<TituloPost>Doação de sangue</TituloPost>
-				<TextoPost>
-					Lorem ipsum dolor sit amet, consectetur adipisci elit,
-					sed eiusmod tempor incidunt ut labore et dolore magna aliqua.
-					Ut enim ad minim veniam, quis nostrum exercitationem ullam
-					corporis suscipit laboriosam, nisi ut aliquid ex ea commodi
-					consequatur. Quis aute iure reprehenderit in voluptate velit
-					esse cillum dolore eu fugiat nulla pariatur.
-				</TextoPost>
-			</ColunaDir>
-
-			<ColunaEsq>
 				<img src={img_educacao} width="100%"></img>
 			</ColunaEsq>
-
 			<ColunaDir>
 				<TituloPost>Educação</TituloPost>
 				<TextoPost>
@@ -57,7 +23,38 @@ const Home = () => {
 					esse cillum dolore eu fugiat nulla pariatur.
 				</TextoPost>
 			</ColunaDir>
-			
+
+
+			<ColunaEsq>
+				<img src={img_animais} width="100%"></img>
+			</ColunaEsq>
+			<ColunaDir>
+				<TituloPost>Adoção de animais</TituloPost>
+				<TextoPost>
+				Lorem ipsum dolor sit amet, consectetur adipisci elit,
+					sed eiusmod tempor incidunt ut labore et dolore magna aliqua.
+					Ut enim ad minim veniam, quis nostrum exercitationem ullam
+					corporis suscipit laboriosam, nisi ut aliquid ex ea commodi
+					consequatur. Quis aute iure reprehenderit in voluptate velit
+					esse cillum dolore eu fugiat nulla pariatur.
+				</TextoPost>
+			</ColunaDir>
+
+
+			<ColunaEsq>
+				<img src={img_doe_sangue} width="100%"></img>
+			</ColunaEsq>
+			<ColunaDir>
+				<TituloPost>Doação de sangue</TituloPost>
+				<TextoPost>
+					Lorem ipsum dolor sit amet, consectetur adipisci elit,
+					sed eiusmod tempor incidunt ut labore et dolore magna aliqua.
+					Ut enim ad minim veniam, quis nostrum exercitationem ullam
+					corporis suscipit laboriosam, nisi ut aliquid ex ea commodi
+					consequatur. Quis aute iure reprehenderit in voluptate velit
+					esse cillum dolore eu fugiat nulla pariatur.
+				</TextoPost>
+			</ColunaDir>
 		</div>
 	);
 };
