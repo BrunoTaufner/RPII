@@ -3,10 +3,13 @@ import img_animais from '../assets/img/ong-animais-abandonados.jpg'
 import img_doe_sangue from '../assets/img/doe-sangue.jpeg'
 import img_educacao from '../assets/img/ong.png'
 import {Title, ColunaEsq, ColunaDir, TextoPost, TituloPost} from '../styles/Styles';
+import Footer from "components/Footer/Footer";
+import Navbar from "components/Navbar";
 
 const Home = () => {
 	return (
-		<div>
+		<>
+			<Navbar />
 			<Title>Principais causas da semana</Title>
 
 			<ColunaEsq>
@@ -55,7 +58,8 @@ const Home = () => {
 					esse cillum dolore eu fugiat nulla pariatur.
 				</TextoPost>
 			</ColunaDir>
-		</div>
+			<Footer />
+		</>
 	);
 };
 

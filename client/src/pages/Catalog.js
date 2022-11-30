@@ -1,13 +1,51 @@
 import React from 'react'
 import styled from 'styled-components'
+import Footer from '../components/Footer/Footer'
+import Navbar from '../components/Navbar'
 import ONGCard from '../components/ONGCard/ongcard'
+import {GrAccessibility} from "react-icons/gr"
 
 const Catalog = () => {
   return (
     <>
-        <Header>This is header</Header>
+        <Navbar />
         <PageWrapper>
+            <FilterWrapper>
+                <FilterBox>
+                    <GrAccessibility size="50px" />
+                    <FilterName>FilterName</FilterName>
+                </FilterBox >
+                <FilterBox>
+                    <GrAccessibility size="50px" />
+                    <FilterName>FilterName</FilterName>
+                </FilterBox >
+                <FilterBox>
+                    <GrAccessibility size="50px" />
+                    <FilterName>FilterName</FilterName>
+                </FilterBox >
+                <FilterBox>
+                    <GrAccessibility size="50px" />
+                    <FilterName>FilterName</FilterName>
+                </FilterBox >
+            </FilterWrapper>
             <ContentWrapper>
+                <ONGCard />
+                <ONGCard />
+                <ONGCard />
+                <ONGCard />
+                <ONGCard />
+                <ONGCard />
+                <ONGCard />
+                <ONGCard />
+                <ONGCard />
+                <ONGCard />
+                <ONGCard />
+                <ONGCard />
+                <ONGCard />
+                <ONGCard />
+                <ONGCard />
+                <ONGCard />
+                <ONGCard />
                 <ONGCard />
                 <ONGCard />
                 <ONGCard />
@@ -15,60 +53,58 @@ const Catalog = () => {
                 <ONGCard />
             </ContentWrapper>
         </PageWrapper>
-
+        <Footer />
     </>
 
   )
 }
 
-
-const Header = styled.div`
-    background: black;
-    height: 200px;
-    color: white;
-    font-size: 2rem;
-    display:flex;
-    align-content: center;
-    justify-content:center;
-`
-
 const PageWrapper = styled.div`
     display:flex;
-    background: #19C7B3;
-    height: 100vh;
-    justify-content: center;
-    align-items:center;
+    flex-direction:column;
+    height: 100%;
     padding: 1rem;
 `
 
 const ContentWrapper = styled.div`
     display: flex;
-    flex-direction: column;
-    height: 100%;
-    width: 60%;
-    background: #057097;
-    border: 1px solid #1111112b;
+    flex-direction: row;
+    flex-wrap: wrap;
+    width: 100%;
+    // background: #538EF5;
     border-radius: 16px;
-    box-shadow: 1em 1em 1em #1111112b;
-    margin: 100px 40px 100px 40px;
+    // box-shadow: 1em 1em 1em #1111112b;
     padding: 1rem;
     gap: 1rem;
-    overflow: auto;
-    overflow-y: scroll;
+`
 
-    &::-webkit-scrollbar {
-        width: 10px;
+const FilterWrapper = styled.div`
+    display:flex;
+    flex-direction: row;
+    height: 100px;
+    width:100%;
+    padding: 1rem;
+    gap: 1rem;
+`
+
+const FilterBox = styled.div`
+    display:flex;
+    flex-direction: column;
+    height: 70px;
+    width: 70px;
+    background: #fff;
+    padding: 0.5rem;
+    justify-content:center;
+    align-items:center;
+    &:hover {
+        border-bottom: 2px solid black;
+        cursor: pointer;
+        font-weight:bold;
     }
-    
-    &::-webkit-scrollbar-track {
-    box-shadow: inset 0 0 5px grey;
-    border-radius: 10px;
-    }
-    
-    &::-webkit-scrollbar-thumb {
-    background: #f5f5f5;
-    border-radius: 10px;
-    }
+`
+
+const FilterName = styled.a`
+    font-size: 10px;
 `
 
 export default Catalog
