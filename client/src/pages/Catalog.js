@@ -4,53 +4,33 @@ import Footer from '../components/Footer/Footer'
 import Navbar from '../components/Navbar'
 import ONGCard from '../components/ONGCard/ongcard'
 import {GrAccessibility} from "react-icons/gr"
+import { useState } from 'react'
+
+const baseURL = "http://20.168.54.19:5000"
 
 const Catalog = () => {
+
+    const [data, setData] = useState([])
+
+    async function getapi(url) {
+        const response = await fetch(
+            url,
+        )
+        var data = await response.json();
+        setData(data)
+    }
+    // Calling that async function
+    getapi(`${baseURL}/ong`);
+
+
   return (
     <>
         <Navbar />
         <PageWrapper>
-            <FilterWrapper>
-                <FilterBox>
-                    <GrAccessibility size="50px" />
-                    <FilterName>FilterName</FilterName>
-                </FilterBox >
-                <FilterBox>
-                    <GrAccessibility size="50px" />
-                    <FilterName>FilterName</FilterName>
-                </FilterBox >
-                <FilterBox>
-                    <GrAccessibility size="50px" />
-                    <FilterName>FilterName</FilterName>
-                </FilterBox >
-                <FilterBox>
-                    <GrAccessibility size="50px" />
-                    <FilterName>FilterName</FilterName>
-                </FilterBox >
-            </FilterWrapper>
             <ContentWrapper>
-                <ONGCard />
-                <ONGCard />
-                <ONGCard />
-                <ONGCard />
-                <ONGCard />
-                <ONGCard />
-                <ONGCard />
-                <ONGCard />
-                <ONGCard />
-                <ONGCard />
-                <ONGCard />
-                <ONGCard />
-                <ONGCard />
-                <ONGCard />
-                <ONGCard />
-                <ONGCard />
-                <ONGCard />
-                <ONGCard />
-                <ONGCard />
-                <ONGCard />
-                <ONGCard />
-                <ONGCard />
+                {data.map((elem, index) => {
+                    return <ONGCard key={index} name={elem.nome} description={elem.descricao} image={index+1}/>
+                })}
             </ContentWrapper>
         </PageWrapper>
         <Footer />
