@@ -1,3 +1,5 @@
+import Footer from 'components/Footer/Footer';
+import Navbar from 'components/Navbar';
 import React from 'react';
 import { FaBars } from 'react-icons/fa';
 import {
@@ -6,10 +8,12 @@ import {
 	} from '../styles/Styles';
 const Doacao = () => {
 return (
-	<div>
-	<Title>Faça uma doação</Title>
-	<Input></Input>
-	</div>
+	<>
+		<Navbar />
+		<Title>Faça uma doação</Title>
+		<Input></Input>
+		<Footer />
+	</>
 );
 };
 
