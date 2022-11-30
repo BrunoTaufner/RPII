@@ -28,6 +28,7 @@ return (
 		<NavLink to="/login" activeStyle>
 		<Button primary> Login </Button>
 		</NavLink>
+	
 	</Nav>
 	</>
 );
