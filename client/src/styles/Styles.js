@@ -50,7 +50,6 @@ export const ColunaDir = styled.div `
   height:400px;
   margin-bottom:2em;
   // align-items: center;
-
 // background-color:#aaa;
 // border: 2px solid red;
 `;
