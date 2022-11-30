@@ -1,31 +1,24 @@
 import React from 'react';
-import { FaBars } from 'react-icons/fa';
-import insta from './instagram2.jpg'
-import face from './facebook.png'
-import linkedin from './linkedin.png'
-import twitter from './twitter.jpg'
-import {
-	Title,
-	Input
-	} from '../styles/Styles';
+import { AiFillFacebook, AiFillLinkedin, AiFillInstagram, AiFillTwitterSquare} from 'react-icons/ai';
+import {Title,Input	} from '../styles/Styles';
+
 const Contato = () => {
 return (
-	<div>
+	<div style={{margin: '0 40px'}}>
 	<Title>Contato</Title>
-	<Input></Input>
-	<h1>  Entre em contato com a gente: <br/>qatodoacoes@qato.com.br<br/><br/><br/>Encontre-nos nas redes sociais:</h1>
 	
-	<a href="https://instagram.com" target="_blank" rel="noreferrer">
-          <img src={insta} alt = ""/>
+	<h1>  Entre em contato com a gente: <br/>qatodoacoes@qato.com.br<br/><br/><br/>Encontre-nos nas redes sociais:</h1>
+	<a href="https://instagram.com" target="_blank" rel="noreferrer" marginLeft>
+		<AiFillInstagram size={85} color= "#553c9a"/>
         </a>
 		<a href="https://facebook.com" target="_blank" rel="noreferrer">
-          <img src={face} alt = ""/>
+		<AiFillFacebook size={85} color= "#553c9a" />
         </a>
 		<a href="https://linkedin.com" target="_blank" rel="noreferrer">
-          <img src={linkedin} alt = ""/>
+		<AiFillLinkedin size={85} color= "#553c9a"/>
         </a>
 		<a href="https://twitter.com" target="_blank" rel="noreferrer">
-          <img src={twitter} alt = ""/>
+         <AiFillTwitterSquare size={85} color= "#553c9a"/>
         </a>
 	</div>
 );

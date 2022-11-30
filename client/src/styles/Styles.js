@@ -39,3 +39,4 @@ export const Box = styled.div `
 export const BoxText = styled.text `
 margin-left:10%;
 `;
+
