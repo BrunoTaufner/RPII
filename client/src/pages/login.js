@@ -11,6 +11,27 @@ import LabelPergunta from '../components/labels/Label_Pergunta/Label_Pergunta';
 import SelectTipoOng from '../components/SelectTipoOng/SelectTipoOng';
 
 const Login = () => {
+
+	let infosCadastroOng = {
+		cnpj: "",
+		nome: "",
+		descricao: "",
+		tipo: "",
+		telefone: "",
+		email: "",
+		endereco_cep: "",
+		endereco_num: "",
+		endereco_complemento: "",
+		senha: "",
+	}
+
+	let map = new Map(Object.entries(infosCadastroOng));
+
+	const setInfoCadastroOng = (name, value) => {
+		map.set(name, value);
+		console.log(...map.entries());
+	}
+
 	const mostrarCadastro = () => {
 		document.getElementById("div-login").style.display = "none";
 		document.getElementById("div-tipo-usuario").style.display = "block";
@@ -70,7 +91,8 @@ const Login = () => {
 	const submitCadastroOng = () => {
 		console.log("submit cadastro ong");
 		document.getElementById("div-cadastro-ong-7").style.display = "none";
-		document.getElementById("div-login").style.display = "block";	
+		document.getElementById("div-login").style.display = "block";
+		// TODO
 	}
 	const mostrarCadastroNaoOng = () => {
 		document.getElementById("div-tipo-usuario").style.display = "none";
@@ -165,12 +187,12 @@ return (
 		{/* Fluxo Cadastro Ong */}
 		<div id="div-cadastro-ong-1" style={{display: "none"}}>
 			<TopFormulario tipoCadastro={"ONG"} pergunta={"Qual é o CNPJ da ONG?"} numeradorPergunta={1} denominadorPergunta={7}/>
-			<Input />
+			<Input name="cnpj" handleInputChange={setInfoCadastroOng}/>
 			<Button textoBotao={"Continuar"} handleClick={mostrarCadastroOng2}/>
 		</div>
 		<div id="div-cadastro-ong-2" style={{display: "none"}}>
 			<TopFormulario tipoCadastro={"ONG"} pergunta={"Qual é o nome da ONG que deseja cadastrar?"} numeradorPergunta={2} denominadorPergunta={7}/>
-			<Input />
+			<Input name="nome" handleInputChange={setInfoCadastroOng} />
 			<div style={{display: "flex", justifyContent: "space-evenly"}}>
 				<Button textoBotao={"Voltar"} handleClick={voltarCadastroOng1} />
 				<Button textoBotao={"Continuar"} handleClick={mostrarCadastroOng3} />
@@ -178,7 +200,7 @@ return (
 			</div>
 		<div id="div-cadastro-ong-3" style={{display: "none"}}>
 			<TopFormulario tipoCadastro={"ONG"} pergunta={"Descreva a sua ONG brevemente"} numeradorPergunta={3} denominadorPergunta={7}/>
-			<TextArea />
+			<TextArea name="descricao" handleTextAreaChange={setInfoCadastroOng} />
 			<div style={{display: "flex", justifyContent: "space-evenly"}}>
 				<Button textoBotao={"Voltar"} handleClick={voltarCadastroOng2} />
 				<Button textoBotao={"Continuar"} handleClick={mostrarCadastroOng4} />
@@ -186,7 +208,7 @@ return (
 		</div>
 		<div id="div-cadastro-ong-4" style={{display: "none"}}>
 			<TopFormulario tipoCadastro={"ONG"} pergunta={"Qual é a categoria da ONG?"} numeradorPergunta={4} denominadorPergunta={7}/>
-			<SelectTipoOng />
+			<SelectTipoOng name={"tipo"} handleSelectChange={setInfoCadastroOng}/>
 			<div style={{display: "flex", justifyContent: "space-evenly"}}>
 				<Button textoBotao={"Voltar"} handleClick={voltarCadastroOng3} />
 				<Button textoBotao={"Continuar"} handleClick={mostrarCadastroOng5} />
@@ -196,11 +218,11 @@ return (
 			<TopFormulario tipoCadastro={"ONG"} pergunta={"Qual é o telefone e o e-mail da ONG?"} numeradorPergunta={5} denominadorPergunta={7}/>
 			<div id="input-telefone" style={{display: "flex", justifyContent: "space-evenly"}}>
 				<LabelTitulo texto={"Telefone"} />
-				<Input />
+				<Input name="telefone" handleInputChange={setInfoCadastroOng}/>
 			</div>
 			<div id="input-email" style={{display: "flex", justifyContent: "space-evenly"}}>
 				<LabelTitulo texto={"E-mail"} />
-				<Input />
+				<Input name="email" type={"email"} handleInputChange={setInfoCadastroOng}/>
 			</div>
 			<div style={{display: "flex", justifyContent: "space-evenly"}}>
 				<Button textoBotao={"Voltar"} handleClick={voltarCadastroOng4} />	
@@ -211,7 +233,7 @@ return (
 			<TopFormulario tipoCadastro={"ONG"} pergunta={"Qual é o endereço da unidade da ONG que deseja cadastrar?"} numeradorPergunta={6} denominadorPergunta={7}/>
 			<div id="input-cep" style={{padding: "0 5% 0 5%", display: "flex", justifyContent: "space-between"}}>
 				<LabelTitulo texto={"CEP"} />
-				<Input />
+				<Input name="endereco_cep" handleInputChange={setInfoCadastroOng} />
 			</div>
 			<div id="input-rua" style={{padding: "0 5% 0 5%", display: "flex", justifyContent: "space-between"}}>
 				<LabelTitulo texto={"Rua"} />
@@ -219,11 +241,11 @@ return (
 			</div>
 			<div id="input-numero" style={{padding: "0 5% 0 5%", display: "flex", justifyContent: "space-between"}}>
 				<LabelTitulo texto={"Número"} />
-				<Input />
+				<Input name="endereco_num" handleInputChange={setInfoCadastroOng}/>
 			</div>
 			<div id="input-complemento" style={{padding: "0 5% 0 5%", display: "flex", justifyContent: "space-between"}}>
 				<LabelTitulo texto={"Complemento"} />
-				<Input />
+				<Input name="endereco_complemento" handleInputChange={setInfoCadastroOng}/>
 			</div>
 			<div id="input-bairro" style={{padding: "0 5% 0 5%", display: "flex", justifyContent: "space-between"}}>
 				<LabelTitulo texto={"Bairro"} />
@@ -246,7 +268,7 @@ return (
 			<TopFormulario tipoCadastro={"ONG"} pergunta={"Qual vai ser a senha da sua conta?"} numeradorPergunta={7} denominadorPergunta={7}/>
 			<div id="input-senha" style={{padding: "0 5% 0 5%", display: "flex", justifyContent: "space-between"}}>
 				<LabelTitulo texto={"Senha"} />
-				<Input />
+				<Input name="senha" handleInputChange={setInfoCadastroOng}/>
 			</div>
 			<div id="input-confimacao-senha" style={{padding: "0 5% 0 5%", display: "flex", justifyContent: "space-between"}}>
 				<LabelTitulo texto={"Confirmação da senha"} />
