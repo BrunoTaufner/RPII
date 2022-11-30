@@ -92,7 +92,7 @@ class Controller:
 
     def login(self, email, senha, tipo):
         if tipo == "ONG":
-            validation_query = self._read_sql_file(file_name="get_ongs_by_parameter")
+            validation_query = self._read_sql_file(file_name="get_ongs_by_parameters")
             validation_query = validation_query.format(parameter="email", value=f"'{email}'")
             results = self.db.get_records(validation_query)
 
@@ -112,6 +112,24 @@ class Controller:
             return make_response("Nao implementado", 400)
         elif tipo == "Pessoa fisica":
             return make_response("Nao implementado", 400)
+
+    def search_ong(self, causa, nome):
+        results = []
+        causa = False
+        if causa and nome:
+            validation_query = self._read_sql_file(file_name="search_ong")
+            validation_query = validation_query.format(nome=f"'%{nome}%'", causa=f"'%{causa}%'")
+            results = self.db.get_records(validation_query)
+        elif causa:
+            validation_query = self._read_sql_file(file_name="search_ong_causa")
+            validation_query = validation_query.format(causa=f"'%{causa}%'")
+            results = self.db.get_records(validation_query)
+        elif nome:
+            validation_query = self._read_sql_file(file_name="search_ong_name")
+            validation_query = validation_query.format(nome=f"'%{nome}%'")
+            results = self.db.get_records(validation_query)
+
+        return make_response(jsonify(results), 200)
 
 if __name__ == '__main__':
     raise Exception('')

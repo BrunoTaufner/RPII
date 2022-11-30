@@ -52,6 +52,9 @@ export const ColunaDir = styled.div `
   // align-items: center;
 
 // background-color:#aaa;border: 2px solid red;
+
+// background-color:#aaa;
+// border: 2px solid red;
 `;
 
 export const TituloPost = styled.p `
@@ -73,7 +76,7 @@ export const TextoPost = styled.p `
   text-align: justify;
   overflow:hidden;
   height:55%;
-  // border: 2px solid blue;
+  border: 2px solid blue;
 `;
 
 export const LinkPost = styled.p `
