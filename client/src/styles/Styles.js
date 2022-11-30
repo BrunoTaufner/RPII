@@ -51,8 +51,7 @@ export const ColunaDir = styled.div `
   margin-bottom:2em;
   // align-items: center;
 
-// background-color:#aaa;
-// border: 2px solid red;
+// background-color:#aaa;border: 2px solid red;
 `;
 
 export const TituloPost = styled.p `
@@ -62,15 +61,14 @@ export const TituloPost = styled.p `
   overflow-wrap: break-word;
   overflow:hidden;
   text-align: center;
-  margin-bottom:0px;
-  // border: 2px solid blue;
+  // margin-top:0px;
+// border: 2px solid blue;
 `;
 
 export const TextoPost = styled.p `
   font-size:22px;
   color: #3e3e3e;
   padding-left:1em;
-  margin-bottom:0px;
   overflow-wrap: break-word;
   text-align: justify;
   overflow:hidden;
