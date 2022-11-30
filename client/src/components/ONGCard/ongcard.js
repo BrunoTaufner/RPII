@@ -1,7 +1,10 @@
 import React from 'react'
+import {useNavigate } from 'react-router-dom'
 import styled from 'styled-components'
 
 const ONGCard = (props) => {
+
+    const navigate = useNavigate();
 
     const images = {
         1: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTeFt9XvVJ3HAMnMkBelXmzPA_D0jTPKEDphw&usqp=CAU",
@@ -15,9 +18,15 @@ const ONGCard = (props) => {
         9: "https://www.ongsementesdoamanha.org.br/wp-content/uploads/2021/01/logo-sementes-do-amanha.png",
     }
 
+    const handleClick = (props) => {
+        const temp ={...props}; 
+        temp.image = images[props.image]
+        navigate('/ong', {replace: true, state:temp})
+    };
+
   return (
     <>
-        <ONGWrapper>
+        <ONGWrapper onClick={event => handleClick(props)}>
             <ONGImgWrapper>
                 <OngImg background={images[props.image]} />
             </ONGImgWrapper>
