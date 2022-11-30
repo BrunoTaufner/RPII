@@ -21,7 +21,7 @@ return (
 		</Column>
 		<Column>
 			
-			<FooterLink href="#">Contato</FooterLink>
+			<FooterLink href="/contato">Contato</FooterLink>
 		</Column>
 		<Column>
 		
