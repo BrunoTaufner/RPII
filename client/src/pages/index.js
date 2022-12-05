@@ -1,20 +1,58 @@
 import React from "react";
-import ong_animais from '../assets/img/ong-animais-abandonados.jpg'
-import {Title, Box, BoxText} from '../styles/Styles';
+import img_animais from '../assets/img/ong-animais-abandonados.jpg'
+import img_doe_sangue from '../assets/img/doe-sangue.jpeg'
+import img_educacao from '../assets/img/ong.png'
+import {Title, ColunaEsq, ColunaDir, TextoPost, TituloPost, LinkPost, A} from '../styles/Styles';
+import Footer from "components/Footer/Footer";
+import Navbar from "components/Navbar";
+
+
 const Home = () => {
 	return (
-		<Box>
+		<>
+			<Navbar />
 			<Title>Principais causas da semana</Title>
-			<img src={ong_animais} width="30%"></img>
-			<BoxText>
-				Lorem ipsum dolor sit amet, consectetur adipisci elit,
-				sed eiusmod tempor incidunt ut labore et dolore magna aliqua.
-				Ut enim ad minim veniam, quis nostrum exercitationem ullam
-				corporis suscipit laboriosam, nisi ut aliquid ex ea commodi
-				consequatur. Quis aute iure reprehenderit in voluptate velit
-				esse cillum dolore eu fugiat nulla pariatur.
-			</BoxText>
-		</Box>
+
+			<ColunaEsq>
+				<a href=""><img src={img_educacao} width="100%"></img></a>
+			</ColunaEsq>
+			<ColunaDir>
+				<TituloPost>Educação</TituloPost>
+				<TextoPost>
+				Nosso objetivo é melhorar a qualidade da Educação Básica no Brasil.
+				Sem fins lucrativos, não governamental e sem ligação com partidos políticos, somos financiados por recursos privados, não recebendo nenhum tipo de verba pública.
+				Isso nos garante a independência necessária para desafiar o que precisa ser desafiado, mudar o que precisa ser mudado.
+				</TextoPost>
+				<A href=""><LinkPost>Saiba mais</LinkPost></A>
+			</ColunaDir>
+
+
+			<ColunaEsq>
+				<a href=""><img src={img_animais} width="100%"></img></a>
+			</ColunaEsq>
+			<ColunaDir>
+				<TituloPost>Adoção de animais</TituloPost>
+				<TextoPost>
+				Visamos tirar o maior número possível de animais das ruas, tratar de possíveis traumas e doenças e integrá-los a famílias que estejam dispostas a dar muito amor e carinho.
+				Amigos e voluntários dispostos a encontrar sempre o melhor lar e famílias para dar uma vida digna aos animais.
+				</TextoPost>
+				<A href=""><LinkPost>Saiba mais</LinkPost></A>
+			</ColunaDir>
+
+
+			<ColunaEsq>
+				<a href=""><img src={img_doe_sangue} width="100%"></img></a>
+			</ColunaEsq>
+			<ColunaDir>
+				<TituloPost>Doação de sangue</TituloPost>
+				<TextoPost>
+				Com o desejo de conscientizar os cidadãos para o hábito de doar, a ONG Vidas Recicladas iniciou a campanha de doação de sangue “Precisamos do seu amor”.
+				Através de um cadastro permanente de doadores a ONG Vidas Recicladas busca ajudar a suprir a demanda dos bancos de sangue e hemocentros da região através de ações mensais de incentivo a doação.
+				</TextoPost>
+				<A href=""><LinkPost>Saiba mais</LinkPost></A>
+			</ColunaDir>
+			<Footer />
+		</>
 	);
 };
 
