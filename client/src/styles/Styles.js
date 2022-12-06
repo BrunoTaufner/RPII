@@ -48,13 +48,14 @@ font-size: 35px;
 padding: 0.25em 1em;
 border: 2px solid #538EF5;
 width: 160px;
+height: 100px;
 border-radius: 3px;
 `;
 
 export const SubtitleDoacao = styled.h3`
 font-size: 30px;
 font-weight: 600;
-padding: 0.25em 1em;
+padding: 0.05em 0.5em;
 background-image: linear-gradient(to left, #553c9a, #b393d3);
 color: transparent;
 background-clip: text;
@@ -68,7 +69,7 @@ export const TextDoacao = styled.div`
    }
    margin: auto;
    width: 50%;
-   padding: 10px;
+   padding: 5px;
    padding-bottom: 0px;
  `
 

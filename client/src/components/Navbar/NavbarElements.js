@@ -5,7 +5,7 @@ import styled from 'styled-components';
 export const Nav = styled.nav`
 background: #FF;
 border-radius: 10px;
-height: 60px;
+height: 80px;
 box-shadow: 2px 2px 20px lightblue;
 display: flex;
 
