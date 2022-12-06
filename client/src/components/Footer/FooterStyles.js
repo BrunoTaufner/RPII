@@ -1,18 +1,18 @@
 import styled from 'styled-components';
 
 export const Box = styled.div`
-position: relative;
-height: 20px;
-background-color: #FFFFF;
-bottom: 0px;
-left: 0px;
-right: 0px;
-margin-bottom: 0px;
-box-shadow: 2px 2px 20px lightblue;
+// position: relative;
+// height: 20px;
+// background-color: #FFFFF;
+// bottom: 0px;
+// left: 0px;
+// right: 0px;
+// margin-bottom: 0px;
+// box-shadow: 2px 2px 20px lightblue;
 
-@media (max-width: 1000px) {
-	padding: 70px 30px;
-}
+// @media (max-width: 1000px) {
+// 	padding: 70px 30px;
+// }
 `;
 
 export const Container = styled.div`
