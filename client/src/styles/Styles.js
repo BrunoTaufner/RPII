@@ -9,12 +9,18 @@ import styled from 'styled-components';
   border-radius: 3px;
   justify-content: center;
   display: flex;
-  .active{
-    color: red;
-  }
   :hover{
     background-color: #538EF5;
     color: white;
+  }
+  .active:active {
+    color: red;
+  }
+  .focus:focus {
+    color: red;
+  }
+  container .button.selected {
+    color: red;
   }
 `;
 
