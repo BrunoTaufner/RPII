@@ -2,7 +2,6 @@ import React from "react";
 import { Nav, NavLink, NavMenu, Button, Center }
 	from "./NavbarElements";
 import Logo from '../Logo/QatoLogo2.png'
-import { AiFillHome } from 'react-icons/ai';
 
 const Navbar = () => {
 return (
