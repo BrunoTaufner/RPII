@@ -8,7 +8,9 @@ return (
 	<>
 	<Nav>
 		<NavMenu>
-		<img src={Logo} alt="Logotipo"></img>
+		<a href="/">
+			<img src={Logo} alt="Logotipo"></img>
+		</a>
 		<Center>
 		<NavLink to="/" activeStyle>
 			Home

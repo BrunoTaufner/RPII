@@ -42,18 +42,19 @@ const ONGCard = (props) => {
 const ONGWrapper = styled.div`
     display:flex;
     flex-direction:column;
+    justify-content:center;
     width: 250px;
-    height: 300px;
+    height: 400px;
     min-height: 300px;
     padding: 0.5rem;
-    background: transparent;
-
+    border: solid 1px #538EF5;
+    box-shadow: 1px 1px 1px 1px #538EF5;
     &:hover {
         cursor: pointer;
     }
 `
 const ONGTitle = styled.h1`
-    color: black;
+    color: #000;
     font-size: 24px;
     margin-top: 0.5rem;
 `
@@ -64,7 +65,7 @@ const ONGInformationsWrapper = styled.div`
     width: 100%;
     height: 90px;
     display:flex;
-    color: grey;
+    color: #000;
     padding: 0.3rem;
     overflow:hidden;
     display: -webkit-box;
@@ -74,19 +75,20 @@ const ONGInformationsWrapper = styled.div`
 
 const ONGImgWrapper = styled.div`
     width: 100%;
-    height: 100%;
+    height: 50%;
     display:flex;
     align-items:center;
     justify-content:center;
-    border: 1px solid black;
-    border-radius: 16px;
+    // border: 1px solid black;
+    // border-radius: 16px;
     overflow:hidden;
+    
 `
 
 const OngImg = styled.div`
     background-image: ${props => `url(${props.background})`};
-    height: 150px;
-    width: 150px;
+    height: 100%;
+    width: 100%;
     background-repeat: no-repeat;
     background-size: contain;
     display: flex;

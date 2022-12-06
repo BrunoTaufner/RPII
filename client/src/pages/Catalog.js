@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import styled from 'styled-components'
 import Footer from '../components/Footer/Footer'
 import Navbar from '../components/Navbar'
@@ -6,7 +6,7 @@ import ONGCard from '../components/ONGCard/ongcard'
 import {GrAccessibility} from "react-icons/gr"
 import { useState } from 'react'
 
-const baseURL = "http://20.168.54.19:5000"
+const baseURL = "http://127.0.0.1:5000"
 
 const Catalog = () => {
 
@@ -19,8 +19,11 @@ const Catalog = () => {
         var data = await response.json();
         setData(data)
     }
-    // Calling that async function
-    getapi(`${baseURL}/ong`);
+
+    useEffect(() => {
+        // Calling that async function
+        getapi(`${baseURL}/ong`);
+    }, []);
 
 
   return (
@@ -56,6 +59,7 @@ const ContentWrapper = styled.div`
     // box-shadow: 1em 1em 1em #1111112b;
     padding: 1rem;
     gap: 1rem;
+    height: 100vh;
 `
 
 const FilterWrapper = styled.div`
