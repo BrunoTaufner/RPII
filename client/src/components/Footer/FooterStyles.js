@@ -1,16 +1,14 @@
 import styled from 'styled-components';
 
 export const Box = styled.div`
-position: absolute;
+position: fixed;
 height: 20px;
-background-color: #FF;
+background-color: #FFFFF;
 bottom: 0px;
 left: 0px;
 right: 0px;
 margin-bottom: 0px;
 box-shadow: 2px 2px 20px lightblue;
-
-
 
 @media (max-width: 1000px) {
 	padding: 70px 30px;
@@ -23,7 +21,7 @@ export const Container = styled.div`
 	justify-content: center;
 	max-width: 1000px;
 	margin: 0 auto;
-	/* background: red; */
+	background: #FFFF;
 `
 
 export const Column = styled.div`

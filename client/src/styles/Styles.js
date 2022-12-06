@@ -103,19 +103,7 @@ export const Input = styled.input.attrs(props => ({
   // or we can define dynamic ones
   size: props.size || "1em",
 }))`
-    color: palevioletred;
-    font-size: 1em;
-    border: 2px solid palevioletred;
-    border-radius: 3px;
-	display: flex;
-    position: relative;
-	margin: 0;
-    position: absolute;
-    top: 150%;
-    left: 50%;
-    transform: translate(-50%, -50%);	
-  `;
-
+    
 export const ColunaEsq = styled.div `
   // border: 3px solid red;
   float: left;
