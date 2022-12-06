@@ -19,6 +19,9 @@ return (
 		<NavLink to="/buscarong" activeStyle>
 			Buscar ONG
 		</NavLink>
+		<NavLink to="/catalog" activeStyle>
+			Todas as ONGs
+		</NavLink>
 		<NavLink to="/eventos" activeStyle>
 			Eventos
 		</NavLink>

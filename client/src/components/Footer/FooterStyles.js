@@ -3,7 +3,7 @@ import styled from 'styled-components';
 export const Box = styled.div`
 position: relative;
 height: 20px;
-background-color: #FF;
+background-color: #FFFFF;
 bottom: 0px;
 left: 0px;
 right: 0px;
@@ -21,8 +21,7 @@ export const Container = styled.div`
 	justify-content: center;
 	max-width: 1000px;
 	margin: 0 auto;
-	/* background: red; */
-	overflow-y: scroll;
+	background: #FFFF;
 `
 
 export const Column = styled.div`

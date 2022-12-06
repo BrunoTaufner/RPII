@@ -7,6 +7,8 @@ import ListaEventos from './pages/listaEventos'
 import BuscarOng from './pages/buscarOngs'
 import Sobre from './pages/sobre'
 import Login from './pages/login'
+import ONG from 'pages/ong';
+import Contato from './pages/contato';
 
 const routes = () => {
     return (
@@ -20,6 +22,8 @@ const routes = () => {
                     <Route path = '/buscarong' element = {<BuscarOng/>} />
                     <Route path = '/doacao' element = {<Doacao/>} />
                     <Route path = '/login' element = {<Login/>} />
+                    <Route path = '/ong' element = {<ONG/>} />
+                    <Route path = '/contato' element = {<Contato/>} />
                 </Routes>
             </BrowserRouter>
         </>
