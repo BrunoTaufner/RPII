@@ -1,7 +1,7 @@
 import styled from 'styled-components';
 
 export const Box = styled.div`
-position: fixed;
+position: relative;
 height: 20px;
 background-color: #FF;
 bottom: 0px;
@@ -9,8 +9,6 @@ left: 0px;
 right: 0px;
 margin-bottom: 0px;
 box-shadow: 2px 2px 20px lightblue;
-
-
 
 @media (max-width: 1000px) {
 	padding: 70px 30px;
@@ -24,6 +22,7 @@ export const Container = styled.div`
 	max-width: 1000px;
 	margin: 0 auto;
 	/* background: red; */
+	overflow-y: scroll;
 `
 
 export const Column = styled.div`
