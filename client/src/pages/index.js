@@ -14,7 +14,7 @@ const Home = () => {
 			<Title>Principais causas da semana</Title>
 
 			<ColunaEsq>
-				<a href=""><img src={img_educacao} width="100%"></img></a>
+				<a href="#"><img src={img_educacao} alt={"sala de aula com vários alunos sentados estudando"} width="100%"></img></a>
 			</ColunaEsq>
 			<ColunaDir>
 				<TituloPost>Educação</TituloPost>

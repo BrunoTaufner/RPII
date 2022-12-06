@@ -1,6 +1,14 @@
 import Footer from "components/Footer/Footer";
 import Navbar from "components/Navbar";
 import React from "react";
+import LabelTitulo from '../components/labels/LabelTitulo/LabelTitulo';
+import LabelTexto from '../components/labels/LabelTexto/LabelTexto';
+import LabelPergunta from '../components/labels/Label_Pergunta/Label_Pergunta';
+import TopFormulario from '../components/TopFormulario/TopFormulario';
+import Input from '../components/Input/Input';
+import Button from '../components/Button/Button';
+import TextArea from '../components/TextArea/TextArea';
+import SelectTipoOng from '../components/SelectTipoOng/SelectTipoOng';
 
 const Login = () => {
 
@@ -164,7 +172,7 @@ return (
 			<Button textoBotao={"Entrar"} />
 			<LabelTexto texto={"Não possui cadastro?"}/>
 			<LabelTexto texto={"Para se cadastrar"}/>
-			<a onClick={mostrarCadastro} style={{textDecoration: "none", cursor: 'pointer'}}>
+			<a onClick={mostrarCadastro} href="#" style={{textDecoration: "none", cursor: 'pointer'}}>
 				<LabelTexto texto={"CLIQUE AQUI"}/>
 			</a>
 		</div>
