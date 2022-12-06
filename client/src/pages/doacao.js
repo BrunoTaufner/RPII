@@ -116,10 +116,12 @@ return (
 		<SubmitButton onClick={gerarPix}>Gerar PIX</SubmitButton>
 
 		<div id="gerarPix" style={{display: "none"}}>
-			<div style={{display: "flex", justifyContent: "space-evenly", margin: "30px", padding: "50px"}}>
-
-				<h1>{Pix}</h1>
-
+				<div style={{display: "flex", alignItems: "center"}}>  
+					<div style={{display: "flex", justifyContent: "space-evenly", padding:"20px"}}>
+					<SubtitleDoacao>Pix para doação:</SubtitleDoacao>
+				
+					<h3 style={{padding: "20px"}}>{Pix}</h3>
+				</div>
 			</div>
 		</div>
 
