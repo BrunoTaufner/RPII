@@ -2,7 +2,6 @@ import React from "react";
 import { Nav, NavLink, NavMenu, Button, Center }
 	from "./NavbarElements";
 import Logo from '../Logo/QatoLogo2.png'
-import { AiFillHome } from 'react-icons/ai';
 
 const Navbar = () => {
 return (
@@ -20,6 +19,9 @@ return (
 		<NavLink to="/buscarong" activeStyle>
 			Buscar ONG
 		</NavLink>
+		<NavLink to="/catalog" activeStyle>
+			Todas as ONGs
+		</NavLink>
 		<NavLink to="/eventos" activeStyle>
 			Eventos
 		</NavLink>
@@ -28,6 +30,7 @@ return (
 		<NavLink to="/login" activeStyle>
 		<Button primary> Login </Button>
 		</NavLink>
+	
 	</Nav>
 	</>
 );

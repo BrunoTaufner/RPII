@@ -1,8 +1,10 @@
+
 import React, { useState } from 'react';
 import Footer from "../components/Footer/Footer";
 import Navbar from '../components/Navbar';
 import styles from '../styles/doacao.css'
 import axios from "axios";
+
 
 import {
 	Title,
@@ -89,7 +91,7 @@ const Doacao = () => {
 
 return (
 	<>
-		<Navbar/>
+		<Navbar />
 		<Title>Faça uma doação</Title>
 		<div className={styles.container}></div>
 
