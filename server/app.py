@@ -32,14 +32,14 @@ def ong():
                 senha=hashed_senha
             )
             response = jsonify(response)
-            response.headers.add('Access-Control-Allow-Origin', '*')
+            # # response.headers.add('Access-Control-Allow-Origin', '*')
             
             return response
             
         except Exception as e:
             response = {"Erro": e}
             response = jsonify(response)
-            response.headers.add('Access-Control-Allow-Origin', '*')
+            # response.headers.add('Access-Control-Allow-Origin', '*')
             return(make_response(response, 400))
     elif request.method == "PUT":
         try:
@@ -55,23 +55,23 @@ def ong():
                 payload=payload
             )
             response = jsonify(response)
-            response.headers.add('Access-Control-Allow-Origin', '*')
+            # response.headers.add('Access-Control-Allow-Origin', '*')
             return response
         except Exception as e:
             response = {"Erro": e}
             response = jsonify(response)
-            response.headers.add('Access-Control-Allow-Origin', '*')
+            # response.headers.add('Access-Control-Allow-Origin', '*')
             return(make_response(response, 400))
     elif request.method == "GET":
         try:
             response = Controller.get_all_ongs()
             response = jsonify(response)
-            response.headers.add('Access-Control-Allow-Origin', '*')
+            # response.headers.add('Access-Control-Allow-Origin', '*')
             return(make_response(response, 200))
         except:
             response = {"Erro": e}
             response = jsonify(response)
-            response.headers.add('Access-Control-Allow-Origin', '*')
+            # response.headers.add('Access-Control-Allow-Origin', '*')
             return(make_response(response, 400))
 
 @app.route("/ong/<id>", methods=["GET"])
@@ -83,12 +83,12 @@ def get_ong(id):
     try:
         response = Controller.get_ong(id)
         response = jsonify(response)
-        response.headers.add('Access-Control-Allow-Origin', '*')
+        # response.headers.add('Access-Control-Allow-Origin', '*')
         return(make_response(response, 200))
     except:
         response = {"Erro": e}
         response = jsonify(response)
-        response.headers.add('Access-Control-Allow-Origin', '*')
+        # response.headers.add('Access-Control-Allow-Origin', '*')
         return(make_response(response, 400))
 
 @app.route("/ong/<id>", methods=["DELETE"])
@@ -98,12 +98,12 @@ def delete_ong(id):
         Controller.delete_ong(id)
         response = {"Sucesso: ONG has been deleted"}
         response = jsonify(response)
-        response.headers.add('Access-Control-Allow-Origin', '*')
+        # response.headers.add('Access-Control-Allow-Origin', '*')
         return(make_response(response, 200))
     except Exception as e:
         response = {"Erro": e}
         response = jsonify(response)
-        response.headers.add('Access-Control-Allow-Origin', '*')
+        # response.headers.add('Access-Control-Allow-Origin', '*')
         return(make_response(response, 400))
 
 
@@ -118,12 +118,12 @@ def login():
     try:
         response = Controller.login(email, senha, tipo)
         response = jsonify(response)
-        response.headers.add('Access-Control-Allow-Origin', '*')
+        # response.headers.add('Access-Control-Allow-Origin', '*')
         return response
     except Exception as e:
         response = {"Erro": e}
         response = jsonify(response)
-        response.headers.add('Access-Control-Allow-Origin', '*')
+        # response.headers.add('Access-Control-Allow-Origin', '*')
         return make_response(response, 400)
 
 @app.route("/searchong", methods=["POST"])
