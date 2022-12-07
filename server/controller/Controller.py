@@ -129,7 +129,9 @@ class Controller:
             validation_query = validation_query.format(nome=f"'%{nome}%'")
             results = self.db.get_records(validation_query)
 
-        return make_response(jsonify(results), 200)
+        response = jsonify(results)
+        response.headers.add('Access-Control-Allow-Origin', '*')
+        return make_response(response, 200)
 
 if __name__ == '__main__':
     raise Exception('')

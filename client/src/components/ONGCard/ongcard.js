@@ -20,7 +20,6 @@ const ONGCard = (props) => {
 
     const handleClick = (props) => {
         const temp ={...props}; 
-        temp.image = images[props.image]
         navigate('/ong', {replace: true, state:temp})
     };
 
@@ -28,7 +27,7 @@ const ONGCard = (props) => {
     <>
         <ONGWrapper onClick={event => handleClick(props)}>
             <ONGImgWrapper>
-                <OngImg background={images[props.image]} />
+                <OngImg background={props.image} />
             </ONGImgWrapper>
             <ONGTitle>{props.name}</ONGTitle> 
             <ONGInformationsWrapper>

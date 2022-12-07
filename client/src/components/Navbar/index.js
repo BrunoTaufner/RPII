@@ -8,23 +8,18 @@ return (
 	<>
 	<Nav>
 		<Center>
-			<NavMenu>
-				<a href="/">
-					<img src={Logo} alt="Logotipo"></img>
-				</a>
-			</NavMenu>	
-			<NavLink to="/" activeStyle>
-				Home
-			</NavLink>
-			<NavLink to="/buscarong" activeStyle>
-				Buscar ONG
-			</NavLink>
-			<NavLink to="/contato" activeStyle>
-				Contato
-			</NavLink>
-			<NavLink to="/login" activeStyle>
-				<Button primary> Login </Button>
-			</NavLink>
+		<NavLink to="/" activeStyle>
+			Home
+		</NavLink>
+		<NavLink to="/sobre" activeStyle>
+			Sobre nós
+		</NavLink>
+		<NavLink to="/catalog" activeStyle>
+			Buscar ONG
+		</NavLink>
+		<NavLink to="/eventos" activeStyle>
+			Eventos
+		</NavLink>
 		</Center>
 	</Nav>
 	</>
