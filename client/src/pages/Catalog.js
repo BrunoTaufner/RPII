@@ -6,7 +6,7 @@ import ONGCard from '../components/ONGCard/ongcard'
 import {GrAccessibility} from "react-icons/gr"
 import { useState } from 'react'
 
-const baseURL = "http://127.0.0.1:5000"
+const baseURL = "http://18.205.161.218:5000"
 
 const Catalog = () => {
 
@@ -37,7 +37,6 @@ const Catalog = () => {
         for (var i = 0; i < data.length; i++) {
             const name = data[i].nome.toLowerCase();
             const descricao = data[i].descricao.toLowerCase();
-            console.log(search)
             if (name.includes(search) || descricao.includes(search)) {
                 newData.push(data[i]);
             }

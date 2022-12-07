@@ -20,7 +20,6 @@ const ONGCard = (props) => {
 
     const handleClick = (props) => {
         const temp ={...props}; 
-        temp.image = images[props.image]
         navigate('/ong', {replace: true, state:temp})
     };
 
