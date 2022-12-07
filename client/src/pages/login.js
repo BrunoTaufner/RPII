@@ -9,6 +9,7 @@ import Input from '../components/Input/Input';
 import Button from '../components/Button/Button';
 import TextArea from '../components/TextArea/TextArea';
 import SelectTipoOng from '../components/SelectTipoOng/SelectTipoOng';
+import axios from "axios";
 
 const Login = () => {
 
@@ -92,7 +93,14 @@ const Login = () => {
 		console.log("submit cadastro ong");
 		document.getElementById("div-cadastro-ong-7").style.display = "none";
 		document.getElementById("div-login").style.display = "block";
-		// TODO
+		// TODO - TESTAR
+		axios({
+			method: "post",
+			url: "http://18.205.161.218:5000/ong/",
+			data: infosCadastroOng
+		  }).then(function (response) {
+			console.log(response)
+		  });
 	}
 	const mostrarCadastroNaoOng = () => {
 		document.getElementById("div-tipo-usuario").style.display = "none";
