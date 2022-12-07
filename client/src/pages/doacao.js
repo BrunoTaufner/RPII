@@ -35,10 +35,6 @@ const Doacao = () => {
 		button[i].addEventListener("click",addSelectClass);
 	}
 
-
-
-
-
 	const [name, setName] = useState([]);
 	const [desc, setDesc] = useState([]);
 	const [Pix, setPix] = useState([]);
@@ -57,7 +53,7 @@ const Doacao = () => {
 
 	axios({
 		method: "get",
-		url: "http://20.168.54.19:5000/ong/"+id,
+		url: "http://18.205.161.218:5000/ong/"+id,
 		responseType: "json",
 	  }).then(function (response) {
 		console.log(response.data.nome)

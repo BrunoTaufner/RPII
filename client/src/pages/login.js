@@ -170,10 +170,8 @@ return (
 				<Input />
 			</div>
 			<Button textoBotao={"Entrar"} />
-			<LabelTexto texto={"Não possui cadastro?"}/>
-			<LabelTexto texto={"Para se cadastrar"}/>
 			<a onClick={mostrarCadastro} href="#" style={{textDecoration: "none", cursor: 'pointer'}}>
-				<LabelTexto texto={"CLIQUE AQUI"}/>
+				<LabelTexto texto={"Não possui cadastro?"}/>
 			</a>
 		</div>
 		<div id="div-tipo-usuario" style={{display: "none"}}>
@@ -216,11 +214,11 @@ return (
 		</div>
 		<div id="div-cadastro-ong-5" style={{display: "none"}}>
 			<TopFormulario tipoCadastro={"ONG"} pergunta={"Qual é o telefone e o e-mail da ONG?"} numeradorPergunta={5} denominadorPergunta={7}/>
-			<div id="input-telefone" style={{display: "flex", justifyContent: "space-evenly"}}>
+			<div id="input-telefone" style={{padding: "0 5% 0 5%", display: "flex", justifyContent: "space-between"}}>
 				<LabelTitulo texto={"Telefone"} />
 				<Input name="telefone" handleInputChange={setInfoCadastroOng}/>
 			</div>
-			<div id="input-email" style={{display: "flex", justifyContent: "space-evenly"}}>
+			<div id="input-email" style={{padding: "0 5% 0 5%", display: "flex", justifyContent: "space-between"}}>
 				<LabelTitulo texto={"E-mail"} />
 				<Input name="email" type={"email"} handleInputChange={setInfoCadastroOng}/>
 			</div>
@@ -284,7 +282,7 @@ return (
 		<LabelTitulo texto={"Cadastre-se"}/>
 			<LabelPergunta pergunta={"Você gostaria de cadastrar uma Pessoa Física ou Pessoa Jurídica?"}/>
 			<div style={{display: "flex", justifyContent: "space-evenly"}}>
-				<Button textoBotao={"Pessoa física"} handleClick={mostrarCadastroPf1} />
+				<Button textoBotao={"Pessoa Física"} handleClick={mostrarCadastroPf1} />
 				<Button textoBotao={"Pessoa Jurídica"} handleClick={mostrarCadastroPj1}/>
 			</div>
 		</div>
@@ -311,7 +309,15 @@ return (
 			</div>
 		</div>
 		<div id="div-cadastro-pf-4" style={{display: "none"}}>
-			<TopFormulario tipoCadastro={"Pessoa Física"} pergunta={"Qual vai ser a senha da sua conta?"} numeradorPergunta={4} denominadorPergunta={4}/>
+			<TopFormulario tipoCadastro={"Pessoa Física"} pergunta={"Qual vai ser o e-mail e a senha da sua conta?"} numeradorPergunta={4} denominadorPergunta={4}/>
+			<div id="input-email" style={{padding: "0 5% 0 5%", display: "flex", justifyContent: "space-between"}}>
+				<LabelTitulo texto={"E-mail"} />
+				<Input name="email" type={"email"} handleInputChange={setInfoCadastroOng}/>
+			</div>
+			<div id="input-email" style={{padding: "0 5% 0 5%", display: "flex", justifyContent: "space-between"}}>
+				<LabelTitulo texto={"Confirmação de e-mail"} />
+				<Input name="email" type={"email"} handleInputChange={setInfoCadastroOng}/>
+			</div>
 			<div id="input-senha" style={{padding: "0 5% 0 5%", display: "flex", justifyContent: "space-between"}}>
 				<LabelTitulo texto={"Senha"} />
 				<Input />
@@ -340,7 +346,15 @@ return (
 			</div>
 			</div>
 		<div id="div-cadastro-pj-3" style={{display: "none"}}>
-			<TopFormulario tipoCadastro={"Pessoa Jurídica"} pergunta={"Qual vai ser a senha da sua conta?"} numeradorPergunta={3} denominadorPergunta={3}/>
+			<TopFormulario tipoCadastro={"Pessoa Jurídica"} pergunta={"Qual vai ser o e-mail e a senha da sua conta?"} numeradorPergunta={3} denominadorPergunta={3}/>
+			<div id="input-email" style={{padding: "0 5% 0 5%", display: "flex", justifyContent: "space-between"}}>
+				<LabelTitulo texto={"E-mail"} />
+				<Input name="email" type={"email"} handleInputChange={setInfoCadastroOng}/>
+			</div>
+			<div id="input-email" style={{padding: "0 5% 0 5%", display: "flex", justifyContent: "space-between"}}>
+				<LabelTitulo texto={"Confirmação de e-mail"} />
+				<Input name="email" type={"email"} handleInputChange={setInfoCadastroOng}/>
+			</div>
 			<div id="input-senha" style={{padding: "0 5% 0 5%", display: "flex", justifyContent: "space-between"}}>
 				<LabelTitulo texto={"Senha"} />
 				<Input />
