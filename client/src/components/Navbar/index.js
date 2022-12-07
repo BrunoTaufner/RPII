@@ -18,11 +18,8 @@ return (
 		<NavLink to="/sobre" activeStyle>
 			Sobre nós
 		</NavLink>
-		<NavLink to="/buscarong" activeStyle>
-			Buscar ONG
-		</NavLink>
 		<NavLink to="/catalog" activeStyle>
-			Todas as ONGs
+			Buscar ONG
 		</NavLink>
 		<NavLink to="/eventos" activeStyle>
 			Eventos
