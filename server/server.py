@@ -1,5 +1,5 @@
 from logging import raiseExceptions
-from flask import Flask, request, make_response
+from flask import Flask, request, make_response, jsonify
 from flask_cors import CORS, cross_origin
 import hashlib
 from controller import *
@@ -30,9 +30,16 @@ def ong():
                 endereco_complemento=payload['endereco_complemento'] if 'endereco_completo' in payload else '', 
                 senha=hashed_senha
             )
+            response = jsonify(response)
+            response.headers.add('Access-Control-Allow-Origin', '*')
+            
             return response
+            
         except Exception as e:
-            return(make_response("Error on creating an ONG", 400))
+            response = {"Erro": e}
+            response = jsonify(response)
+            response.headers.add('Access-Control-Allow-Origin', '*')
+            return(make_response(response, 400))
     elif request.method == "PUT":
         try:
             payload = request.get_json()
@@ -46,15 +53,25 @@ def ong():
             response = Controller.update_ong(
                 payload=payload
             )
+            response = jsonify(response)
+            response.headers.add('Access-Control-Allow-Origin', '*')
             return response
         except Exception as e:
-            return(make_response("Error on updating an ONG", 400))
+            response = {"Erro": e}
+            response = jsonify(response)
+            response.headers.add('Access-Control-Allow-Origin', '*')
+            return(make_response(response, 400))
     elif request.method == "GET":
         try:
             response = Controller.get_all_ongs()
+            response = jsonify(response)
+            response.headers.add('Access-Control-Allow-Origin', '*')
             return(make_response(response, 200))
         except:
-            return(make_response("Error on gettingg ONGs", 400))
+            response = {"Erro": e}
+            response = jsonify(response)
+            response.headers.add('Access-Control-Allow-Origin', '*')
+            return(make_response(response, 400))
 
 @app.route("/ong/<id>", methods=["GET"])
 def get_ong(id):
@@ -63,17 +80,28 @@ def get_ong(id):
     """
     try:
         response = Controller.get_ong(id)
+        response = jsonify(response)
+        response.headers.add('Access-Control-Allow-Origin', '*')
         return(make_response(response, 200))
     except:
-        return(make_response("Error on getting ONG", 400))
+        response = {"Erro": e}
+        response = jsonify(response)
+        response.headers.add('Access-Control-Allow-Origin', '*')
+        return(make_response(response, 400))
 
 @app.route("/ong/<id>", methods=["DELETE"])
 def delete_ong(id):
     try:
         Controller.delete_ong(id)
-        return(make_response("ONG has been deleted", 200))
-    except:
-        return(make_response("Error on deleting ONG", 400))
+        response = {"Sucesso: ONG has been deleted"}
+        response = jsonify(response)
+        response.headers.add('Access-Control-Allow-Origin', '*')
+        return(make_response(response, 200))
+    except Exception as e:
+        response = {"Erro": e}
+        response = jsonify(response)
+        response.headers.add('Access-Control-Allow-Origin', '*')
+        return(make_response(response, 400))
 
 
 @app.route("/login", methods=["POST"])
@@ -85,9 +113,14 @@ def login():
 
     try:
         response = Controller.login(email, senha, tipo)
+        response = jsonify(response)
+        response.headers.add('Access-Control-Allow-Origin', '*')
         return response
     except Exception as e:
-        return make_response("Error while logging in.", 400)
+        response = {"Erro": e}
+        response = jsonify(response)
+        response.headers.add('Access-Control-Allow-Origin', '*')
+        return make_response(response, 400)
 
 @app.route("/searchong", methods=["POST"])
 def search_ong():
