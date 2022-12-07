@@ -96,7 +96,7 @@ const Login = () => {
 		// TODO - TESTAR
 		axios({
 			method: "post",
-			url: "http://20.168.54.19:5000/ong/",
+			url: "http://18.205.161.218:5000/ong/",
 			data: infosCadastroOng
 		  }).then(function (response) {
 			console.log(response)
