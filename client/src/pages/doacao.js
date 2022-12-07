@@ -14,9 +14,13 @@ import {
 	InputDoacao,
 	BlueButton
 	} from '../styles/Styles';
+import { useLocation } from 'react-router-dom';
 
 const Doacao = () => {
 
+
+	const { state } = useLocation();
+	console.log(state)
 
 	var button = document.getElementsByClassName("BlueButton");
 	
@@ -90,8 +94,6 @@ return (
 		<Navbar />
 		<Title>Faça uma doação</Title>
 		<div className={styles.container}></div>
-
-		
 		<SubtitleDoacao> Doe para a {name}</SubtitleDoacao>
 		
 

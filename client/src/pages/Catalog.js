@@ -54,7 +54,7 @@ const Catalog = () => {
                 </SearchBarWrapper>
                 <ResultsWrapper>
                     {filteredData.map((elem, index) => {
-                        return <ONGCard key={index} name={elem.nome} description={elem.descricao} image={elem.image}/>
+                        return <ONGCard props={elem}/>
                     })}
                 </ResultsWrapper>
 

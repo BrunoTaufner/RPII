@@ -4,23 +4,11 @@ import styled from 'styled-components'
 
 const ONGCard = (props) => {
 
+    props = props.props
     const navigate = useNavigate();
 
-    const images = {
-        1: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTeFt9XvVJ3HAMnMkBelXmzPA_D0jTPKEDphw&usqp=CAU",
-        2: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRDoP7Kta_m5SSzW65ocAhRuOVwvImMJsivQw&usqp=CAU",
-        3: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRex1LohvYxMA0bmBVgApdN6oWHIpE3csO0Qw&usqp=CAU",
-        4: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQiD6d74HrZlF3DeuBCg3N3KfrFWrURcS3-DA&usqp=CAU",
-        5: "https://www.ongsbrasil.com.br/logotipos/instituto-vidas-raras.jpg",
-        6: "https://www.suapesquisa.com/uploads/site/logo_sos_mata_atlantica.jpg",
-        7: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTeFt9XvVJ3HAMnMkBelXmzPA_D0jTPKEDphw&usqp=CAU",
-        8: "https://www.premiomelhores.org/wp-content/uploads/2022/11/refugio343.png",
-        9: "https://www.ongsementesdoamanha.org.br/wp-content/uploads/2021/01/logo-sementes-do-amanha.png",
-    }
-
     const handleClick = (props) => {
-        const temp ={...props}; 
-        navigate('/ong', {replace: true, state:temp})
+        navigate('/ong', {replace: true, state:props})
     };
 
   return (
@@ -29,9 +17,9 @@ const ONGCard = (props) => {
             <ONGImgWrapper>
                 <OngImg background={props.image} />
             </ONGImgWrapper>
-            <ONGTitle>{props.name}</ONGTitle> 
+            <ONGTitle>{props.nome}</ONGTitle> 
             <ONGInformationsWrapper>
-                {props.description}
+                {props.descricao}
             </ONGInformationsWrapper>
         </ONGWrapper>
     </>
