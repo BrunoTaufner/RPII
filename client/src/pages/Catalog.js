@@ -12,12 +12,17 @@ const Catalog = () => {
 
     const [data, setData] = useState([])
 
+    const [search, setSearch] = useState("")
+
+    const [filteredData, setFilteredData] = useState([])
+
     async function getapi(url) {
         const response = await fetch(
             url,
         )
         var data = await response.json();
         setData(data)
+        setFilteredData(data)
     }
 
     useEffect(() => {
@@ -26,14 +31,34 @@ const Catalog = () => {
     }, []);
 
 
+    const handleSearchInput = (event) => {  
+        setSearch(event.target.value.toLowerCase())
+        let newData = []
+        for (var i = 0; i < data.length; i++) {
+            const name = data[i].nome.toLowerCase();
+            const descricao = data[i].descricao.toLowerCase();
+            console.log(search)
+            if (name.includes(search) || descricao.includes(search)) {
+                newData.push(data[i]);
+            }
+        } 
+        setFilteredData(newData)
+    };
+
   return (
     <>
         <Navbar />
         <PageWrapper>
             <ContentWrapper>
-                {data.map((elem, index) => {
-                    return <ONGCard key={index} name={elem.nome} description={elem.descricao} image={index+1}/>
-                })}
+                <SearchBarWrapper>
+                    <SearchInput placeholder='Procure por uma ONG' onChange={event => handleSearchInput(event)} />
+                </SearchBarWrapper>
+                <ResultsWrapper>
+                    {filteredData.map((elem, index) => {
+                        return <ONGCard key={index} name={elem.nome} description={elem.descricao} image={elem.image}/>
+                    })}
+                </ResultsWrapper>
+
             </ContentWrapper>
         </PageWrapper>
         <Footer />
@@ -51,6 +76,11 @@ const PageWrapper = styled.div`
 
 const ContentWrapper = styled.div`
     display: flex;
+    flex-direction: column;
+`
+
+const ResultsWrapper = styled.div`
+    display: flex;
     flex-direction: row;
     flex-wrap: wrap;
     width: 100%;
@@ -62,33 +92,28 @@ const ContentWrapper = styled.div`
     height: 100vh;
 `
 
-const FilterWrapper = styled.div`
+const SearchBarWrapper = styled.div`
     display:flex;
-    flex-direction: row;
-    height: 100px;
-    width:100%;
-    padding: 1rem;
-    gap: 1rem;
-`
-
-const FilterBox = styled.div`
-    display:flex;
-    flex-direction: column;
-    height: 70px;
-    width: 70px;
-    background: #fff;
-    padding: 0.5rem;
     justify-content:center;
     align-items:center;
-    &:hover {
-        border-bottom: 2px solid black;
-        cursor: pointer;
-        font-weight:bold;
-    }
+    flex-direction:row;
 `
 
-const FilterName = styled.a`
-    font-size: 10px;
+const SearchInput = styled.input`
+    width:600px;
+    height: 25px;
+    border-radius: 16px;
+    padding: 1rem;
+    border: solid 2px #538EF5;
+    box-shadow: 0.5em 0.5em 0.5em #1111112b;
+    
+    font-size: 16px;
+
+    input[type=text]:focus{
+        outline: none;      /* Remove default outline and use border or box-shadow */
+        box-shadow: 0 0 0 2px orange; /* Full freedom. (works also with border-radius) */
+        border: solid 1px #538EF5;
+      }
 `
 
 export default Catalog
