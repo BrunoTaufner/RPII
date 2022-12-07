@@ -10,6 +10,7 @@ import Login from './pages/login'
 import ONG from 'pages/ong';
 import Contato from './pages/contato';
 import Dashboard from 'pages/dashboard';
+import Donate from 'pages/donate';
 
 const routes = () => {
     return (
@@ -26,6 +27,7 @@ const routes = () => {
                     <Route path = '/ong' element = {<ONG/>} />
                     <Route path = '/contato' element = {<Contato/>} />
                     <Route path = '/dashboard' element = {<Dashboard/>} />
+                    <Route path = '/donation' element = {<Donate/>} />
                 </Routes>
             </BrowserRouter>
         </>

@@ -1,0 +1,42 @@
+.Nav {}
+
+.barra {
+    width: 100%;
+    height: 30px;
+
+    left: 0%;
+    right: 0%;
+    top: 90%;
+    bottom: 0%;
+
+    background: #19C7B3;
+}
+
+.innerheader {
+    height: 100%;
+    width: 60%;
+    margin: 0 auto;
+    float: right;
+    display: block;
+
+    color: white;
+    
+    font-family: 'Helvetica';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 100%;
+    line-height: 100%;
+    text-align: bottom;
+}
+
+.innerheader ul {
+    float: center;
+    margin: 0 auto;
+    
+}
+
+.innerheader ul li {
+    display: inline-block;
+    padding-left: 7%;
+    padding-top: 0.75%;
+}

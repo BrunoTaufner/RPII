@@ -4,6 +4,7 @@ import styled from 'styled-components'
 
 import Navbar from 'components/Navbar'
 import Footer from 'components/Footer/Footer'
+import FakeNavbar from 'components/FakeNavbar';
 
 const baseURL = "http://18.205.161.218:5000"
 
@@ -53,7 +54,7 @@ const Dashboard = () => {
 
   return (
     <>
-        <Navbar />
+        <FakeNavbar />
         <PageWrapper>
           <DashboardSidebar>
             <ONGImageWrapper>

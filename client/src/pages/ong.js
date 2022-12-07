@@ -10,7 +10,7 @@ const ONG = (props) => {
     const navigate = useNavigate();
 
     const handleDonation = (props) => {
-        navigate('/doacao', {replace: true, state:props})
+        navigate('/donation', {replace: true, state:props})
     };
 
   return (
