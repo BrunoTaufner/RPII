@@ -9,6 +9,7 @@ CORS(app)
 Controller = Controller()
 
 @app.route("/ong", methods=["GET", "POST", "PUT"])
+@cross_origin()
 def ong():
     """
     This methods returns a list of all ONGs from 
@@ -74,6 +75,7 @@ def ong():
             return(make_response(response, 400))
 
 @app.route("/ong/<id>", methods=["GET"])
+@cross_origin()
 def get_ong(id):
     """
     This method returns the ong with ong 
@@ -90,6 +92,7 @@ def get_ong(id):
         return(make_response(response, 400))
 
 @app.route("/ong/<id>", methods=["DELETE"])
+@cross_origin()
 def delete_ong(id):
     try:
         Controller.delete_ong(id)
@@ -105,6 +108,7 @@ def delete_ong(id):
 
 
 @app.route("/login", methods=["POST"])
+@cross_origin()
 def login():
     payload = request.get_json()
     email = payload["email"]
@@ -123,6 +127,7 @@ def login():
         return make_response(response, 400)
 
 @app.route("/searchong", methods=["POST"])
+@cross_origin()
 def search_ong():
     payload = request.get_json()
     
