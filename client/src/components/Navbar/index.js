@@ -16,7 +16,7 @@ return (
 			<NavLink to="/" activeStyle>
 				Home
 			</NavLink>
-			<NavLink to="/buscarong" activeStyle>
+			<NavLink to="/catalog" activeStyle>
 				Buscar ONG
 			</NavLink>
 			<NavLink to="/contato" activeStyle>
