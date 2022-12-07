@@ -7,32 +7,25 @@ const Navbar = () => {
 return (
 	<>
 	<Nav>
-		<NavMenu>
-		<a href="/">
-			<img src={Logo} alt="Logotipo"></img>
-		</a>
 		<Center>
-		<NavLink to="/" activeStyle>
-			Home
-		</NavLink>
-		<NavLink to="/sobre" activeStyle>
-			Sobre nós
-		</NavLink>
-		<NavLink to="/buscarong" activeStyle>
-			Buscar ONG
-		</NavLink>
-		<NavLink to="/catalog" activeStyle>
-			Todas as ONGs
-		</NavLink>
-		<NavLink to="/eventos" activeStyle>
-			Eventos
-		</NavLink>
+			<NavMenu>
+				<a href="/">
+					<img src={Logo} alt="Logotipo"></img>
+				</a>
+			</NavMenu>	
+			<NavLink to="/" activeStyle>
+				Home
+			</NavLink>
+			<NavLink to="/buscarong" activeStyle>
+				Buscar ONG
+			</NavLink>
+			<NavLink to="/contato" activeStyle>
+				Contato
+			</NavLink>
+			<NavLink to="/login" activeStyle>
+				<Button primary> Login </Button>
+			</NavLink>
 		</Center>
-		</NavMenu>
-		<NavLink to="/login" activeStyle>
-		<Button primary> Login </Button>
-		</NavLink>
-	
 	</Nav>
 	</>
 );
