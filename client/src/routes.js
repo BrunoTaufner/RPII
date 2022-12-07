@@ -9,6 +9,7 @@ import Sobre from './pages/sobre'
 import Login from './pages/login'
 import ONG from 'pages/ong';
 import Contato from './pages/contato';
+import Dashboard from 'pages/dashboard';
 
 const routes = () => {
     return (
@@ -24,6 +25,7 @@ const routes = () => {
                     <Route path = '/login' element = {<Login/>} />
                     <Route path = '/ong' element = {<ONG/>} />
                     <Route path = '/contato' element = {<Contato/>} />
+                    <Route path = '/dashboard' element = {<Dashboard/>} />
                 </Routes>
             </BrowserRouter>
         </>
